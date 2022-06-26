@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>set_operation - pandasGWAS Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "set_operation";
+        var mkdocs_page_input_path = "set_operation.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> pandasGWAS Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">pandasGWAS Documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Association/">Association</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Browser/">Browser</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../SingleNucleotidePolymorphism/">SingleNucleotidePolymorphism</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Study/">Study</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Trait/">Trait</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../get_SNPs/">get_SNPs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../get_associations/">get_associations</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../get_studies/">get_studies</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../get_traits/">get_traits</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">set_operation</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#function-bindab-c">function bind(a,b)-&gt;c</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-intersectab-c">function intersect(a,b)-&gt;c</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-set_diffab-c">function set_diff(a,b)-&gt;c</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-set_xorab-c">function set_xor(a,b)-&gt;c</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-unionab-c">function union(a,b)-&gt;c</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-set_equalab-bool">function set_equal(a,b)-&gt;bool</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">pandasGWAS Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>set_operation</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="set_operation">set_operation</h1>
+<p>Set operations for objects of same class</p>
+<pre><code class="language-Python"># set operation in EFO Trait
+from pandasgwas.get_traits import get_traits
+from pandasgwas.set_operation import *
+traits1 = get_traits(study_id='GCST000854', efo_id='EFO_0001065')
+traits2 = get_traits(study_id='GCST000854', efo_uri='http://www.ebi.ac.uk/efo/EFO_0005133')
+#Equivalent to traits3 = traits1 + traits2
+traits3 = bind(traits1, traits2)
+traits1 = get_traits(study_id='GCST000854', efo_id='EFO_0001065')
+traits2 = get_traits(study_id='GCST000854', efo_uri='http://www.ebi.ac.uk/efo/EFO_0005133')
+#Equivalent to traits3 = traits1 &amp; traits2
+traits3 = intersect(traits1, traits2)
+traits1 = get_traits(study_id='GCST000854', efo_id='EFO_0001065')
+traits2 = get_traits(study_id='GCST000854', efo_uri='http://www.ebi.ac.uk/efo/EFO_0005133')
+#Equivalent to traits3 = traits1 - traits2
+traits3 = set_diff(traits1, traits2)
+traits1 = get_traits(study_id='GCST000854', efo_id='EFO_0001065')
+traits2 = get_traits(study_id='GCST000854', efo_uri='http://www.ebi.ac.uk/efo/EFO_0005133')
+#Equivalent to traits3 = traits1 ^ traits2
+traits3 = set_xor(traits1, traits2)
+traits1 = get_traits(study_id='GCST000854', efo_id='EFO_0001065')
+traits2 = get_traits(study_id='GCST000854', efo_uri='http://www.ebi.ac.uk/efo/EFO_0005133')
+#Equivalent to traits3 = traits1 | traits2
+traits3 = union(traits1, traits2)
+traits1 = get_traits(study_id='GCST000854')
+traits2 = get_traits(study_id='GCST000854')
+#Equivalent to traits1 == traits2
+set_equal(traits1, traits2)
+</code></pre>
+<h2 id="function-bindab-c"><em>function</em> bind(a,b)-&gt;c</h2>
+<p>Binds together GWAS Catalog objects of the same class. Note that bind() preserves duplicates whereas union() does not.</p>
+<h2 id="function-intersectab-c"><em>function</em> intersect(a,b)-&gt;c</h2>
+<p>Returns the data common to both A and B, with no repetitions</p>
+<h2 id="function-set_diffab-c"><em>function</em> set_diff(a,b)-&gt;c</h2>
+<p>returns the data in A that is not in B, with no repetitions</p>
+<h2 id="function-set_xorab-c"><em>function</em> set_xor(a,b)-&gt;c</h2>
+<p>returns the data of A and B that are not in their intersection (the symmetric difference), with no repetitions</p>
+<h2 id="function-unionab-c"><em>function</em> union(a,b)-&gt;c</h2>
+<p>returns the combined data from A and B with no repetitions</p>
+<h2 id="function-set_equalab-bool"><em>function</em> set_equal(a,b)-&gt;bool</h2>
+<p>Check if the raw data of a and b are equal</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../get_traits/" class="btn btn-neutral float-left" title="get_traits"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../get_traits/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

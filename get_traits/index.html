@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>get_traits - pandasGWAS Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "get_traits";
+        var mkdocs_page_input_path = "get_traits.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> pandasGWAS Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">pandasGWAS Documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Association/">Association</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Browser/">Browser</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../SingleNucleotidePolymorphism/">SingleNucleotidePolymorphism</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Study/">Study</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Trait/">Trait</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../get_SNPs/">get_SNPs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../get_associations/">get_associations</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../get_studies/">get_studies</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">get_traits</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#function-get_traits_by_study_idstudy_id-str-interactive-bool-true-trait">function get_traits_by_study_id(study_id: str, interactive: bool = True) -&gt; Trait</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-study_id">param study_id</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#param-interactive">param interactive</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-get_traits_by_association_idassociation_id-str-interactive-bool-true-trait">function get_traits_by_association_id(association_id: str, interactive: bool = True) -&gt; Trait</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-association_id">param association_id</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_1">param interactive</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-get_traits_by_efo_idefo_id-str-interactive-bool-true-trait">function get_traits_by_efo_id(efo_id: str, interactive: bool = True) -&gt; Trait</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-efo_id">param efo_id</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_2">param interactive</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-get_traits_by_pubmed_idpubmed_id-str-interactive-bool-true-trait">function get_traits_by_pubmed_id(pubmed_id: str, interactive: bool = True) -&gt; Trait</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-pubmed_id">param pubmed_id</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_3">param interactive</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-get_traits_by_efo_uriefo_uri-str-interactive-bool-true-trait">function get_traits_by_efo_uri(efo_uri: str, interactive: bool = True) -&gt; Trait</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-efo_uri">param efo_uri</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_4">param interactive</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-get_traits_by_efo_traitefo_trait-str-interactive-bool-true-trait">function get_traits_by_efo_trait(efo_trait: str, interactive: bool = True) -&gt; Trait</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-efo_trait">param efo_trait</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_5">param interactive</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-get_traits_allinteractive-bool-true-trait">function get_traits_all(interactive: bool = True) -&gt; Trait</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_6">param interactive</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-get_traitsstudy_id-str-none-association_id-str-none-efo_idnone-pubmed_id-str-noneefo_uri-str-none-efo_trait-str-none-set_operation-str-bindinteractive-bool-true-trait">function get_traits(study_id: str = None, association_id: str = None, efo_id=None, pubmed_id: str = None,efo_uri: str = None, efo_trait: str = None, set_operation: str = 'bind',interactive: bool = True) -&gt; Trait</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../set_operation/">set_operation</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">pandasGWAS Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>get_traits</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="get_traits">get_traits</h1>
+<p>Get EFO Trait function based on different search criteria</p>
+<h2 id="function-get_traits_by_study_idstudy_id-str-interactive-bool-true-trait"><em>function</em> get_traits_by_study_id(study_id: str, interactive: bool = True) -&gt; Trait</h2>
+<p>Get GWAS Catalog EFO Traits by Study identifier</p>
+<pre><code class="language-Python">from pandasgwas.get_traits import get_traits_by_study_id
+traits = get_traits_by_study_id('GCST000854') 
+</code></pre>
+<h3 id="param-study_id">param study_id</h3>
+<p>Study identifier, accessionId in Study</p>
+<h3 id="param-interactive">param interactive</h3>
+<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+<h2 id="function-get_traits_by_association_idassociation_id-str-interactive-bool-true-trait"><em>function</em> get_traits_by_association_id(association_id: str, interactive: bool = True) -&gt; Trait</h2>
+<p>Get GWAS Catalog EFO Traits by their Association identifier</p>
+<pre><code class="language-Python">from pandasgwas.get_traits import get_traits_by_association_id
+traits = get_traits_by_association_id('16603') 
+</code></pre>
+<h3 id="param-association_id">param association_id</h3>
+<p>Association identifier, associationId in Association</p>
+<h3 id="param-interactive_1">param interactive</h3>
+<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+<h2 id="function-get_traits_by_efo_idefo_id-str-interactive-bool-true-trait"><em>function</em> get_traits_by_efo_id(efo_id: str, interactive: bool = True) -&gt; Trait</h2>
+<p>Get GWAS Catalog EFO Traits by their EFO Trait identifier</p>
+<pre><code class="language-Python">from pandasgwas.get_traits import get_traits_by_efo_id
+traits = get_traits_by_efo_id('EFO_0001065') 
+</code></pre>
+<h3 id="param-efo_id">param efo_id</h3>
+<p>EFO Trait identifier, shortForm in EFO Trait</p>
+<h3 id="param-interactive_2">param interactive</h3>
+<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+<h2 id="function-get_traits_by_pubmed_idpubmed_id-str-interactive-bool-true-trait"><em>function</em> get_traits_by_pubmed_id(pubmed_id: str, interactive: bool = True) -&gt; Trait</h2>
+<p>Get GWAS Catalog EFO Traits by PubMed identifiers</p>
+<pre><code class="language-Python">from pandasgwas.get_traits import get_traits_by_pubmed_id
+traits = get_traits_by_pubmed_id('21041247') 
+</code></pre>
+<h3 id="param-pubmed_id">param pubmed_id</h3>
+<p>PubMed identifier</p>
+<h3 id="param-interactive_3">param interactive</h3>
+<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+<h2 id="function-get_traits_by_efo_uriefo_uri-str-interactive-bool-true-trait"><em>function</em> get_traits_by_efo_uri(efo_uri: str, interactive: bool = True) -&gt; Trait</h2>
+<p>Get GWAS Catalog EFO Traits by EFO URI</p>
+<pre><code class="language-Python">from pandasgwas.get_traits import get_traits_by_efo_uri
+traits = get_traits_by_efo_uri('http://www.ebi.ac.uk/efo/EFO_0005133') 
+</code></pre>
+<h3 id="param-efo_uri">param efo_uri</h3>
+<p>EFO URI</p>
+<h3 id="param-interactive_4">param interactive</h3>
+<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+<h2 id="function-get_traits_by_efo_traitefo_trait-str-interactive-bool-true-trait"><em>function</em> get_traits_by_efo_trait(efo_trait: str, interactive: bool = True) -&gt; Trait</h2>
+<p>Get GWAS Catalog EFO Traits that match trait description</p>
+<pre><code class="language-Python">from pandasgwas.get_traits import get_traits_by_efo_trait
+traits = get_traits_by_efo_trait('MHPG measurement')
+</code></pre>
+<h3 id="param-efo_trait">param efo_trait</h3>
+<p>Trait description</p>
+<h3 id="param-interactive_5">param interactive</h3>
+<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download. </p>
+<h2 id="function-get_traits_allinteractive-bool-true-trait"><em>function</em> get_traits_all(interactive: bool = True) -&gt; Trait</h2>
+<p>Gets all EFO Trats</p>
+<pre><code class="language-Python">from pandasgwas.get_traits import get_traits_all
+traits = get_traits_all()
+</code></pre>
+<h3 id="param-interactive_6">param interactive</h3>
+<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+<h2 id="function-get_traitsstudy_id-str-none-association_id-str-none-efo_idnone-pubmed_id-str-noneefo_uri-str-none-efo_trait-str-none-set_operation-str-bindinteractive-bool-true-trait"><em>function</em> get_traits(study_id: str = None, association_id: str = None, efo_id=None, pubmed_id: str = None,efo_uri: str = None, efo_trait: str = None, set_operation: str = 'bind',interactive: bool = True) -&gt; Trait</h2>
+<p>Retrieves EFO Traits via the NHGRI-EBI GWAS Catalog REST API. The REST API is queried multiple times with the criteria passed as arguments. By default all EFO Traits that match the criteria supplied in the arguments are retrieved: this corresponds to the default set_operation set to 'bind', If you rather have only the EFO Traits that match simultaneously all criteria provided, then set set_operation to 'intersection'.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../get_studies/" class="btn btn-neutral float-left" title="get_studies"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../set_operation/" class="btn btn-neutral float-right" title="set_operation">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../get_studies/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../set_operation/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Browser - pandasGWAS Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Browser";
+        var mkdocs_page_input_path = "Browser.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> pandasGWAS Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">pandasGWAS Documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Association/">Association</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Browser</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#function-open_in_pubmedpubmed_id-str-bool">function open_in_pubmed(pubmed_id: str) -&gt; bool</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-pubmed_id">param pubmed_id</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-open_in_dbsnpvariant_id-str-bool">function open_in_dbsnp(variant_id: str) -&gt; bool</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-variant_id">param variant_id</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-open_in_gtexvariant_id-str-bool">function open_in_gtex(variant_id: str) -&gt; bool</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-variant_id_1">param variant_id</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-open_study_in_gwas_catalogstudy_id-str-bool">function open_study_in_gwas_catalog(study_id: str) -&gt; bool</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-study_id">param study_id</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-open_variant_in_gwas_catalogvariant_id-str-bool">function open_variant_in_gwas_catalog(variant_id: str) -&gt; bool</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-variant_id_2">param variant_id</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-open_trait_in_gwas_catalogefo_id-str-bool">function open_trait_in_gwas_catalog(efo_id: str) -&gt; bool</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-efo_id">param efo_id</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-open_gene_in_gwas_cataloggene_name-str-bool">function open_gene_in_gwas_catalog(gene_name: str) -&gt; bool</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-gene_name">param gene_name</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-open_region_in_gwas_catalogregion_name_or_location-str-bool">function open_region_in_gwas_catalog(region_name_or_location: str) -&gt; bool</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-region_name_or_location">param region_name_or_location</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-open_publication_in_gwas_catalogpubmed_id-str-bool">function open_publication_in_gwas_catalog(pubmed_id: str) -&gt; bool</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-pubmed_id_1">param pubmed_id</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../SingleNucleotidePolymorphism/">SingleNucleotidePolymorphism</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Study/">Study</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Trait/">Trait</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../get_SNPs/">get_SNPs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../get_associations/">get_associations</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../get_studies/">get_studies</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../get_traits/">get_traits</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../set_operation/">set_operation</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">pandasGWAS Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>Browser</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="browser">Browser</h1>
+<p>A set of helper functions for accessing web links</p>
+<h2 id="function-open_in_pubmedpubmed_id-str-bool"><em>function</em> open_in_pubmed(pubmed_id: str) -&gt; bool</h2>
+<p>This function launches the web browser and opens a tab for PubMed citation</p>
+<pre><code class="language-Python">from pandasgwas.Browser import *
+open_in_pubmed('26301688')
+</code></pre>
+<h3 id="param-pubmed_id">param pubmed_id</h3>
+<p>A PubMed identifier</p>
+<h2 id="function-open_in_dbsnpvariant_id-str-bool"><em>function</em> open_in_dbsnp(variant_id: str) -&gt; bool</h2>
+<p>This function launches the web browser at dbSNP and opens a tab for SNP identifier</p>
+<pre><code class="language-Python">from pandasgwas.Browser import *
+open_in_pubmed('rs56261590')
+</code></pre>
+<h3 id="param-variant_id">param variant_id</h3>
+<p>A variant(Single Nucleotide Polymorphism) identifier</p>
+<h2 id="function-open_in_gtexvariant_id-str-bool"><em>function</em> open_in_gtex(variant_id: str) -&gt; bool</h2>
+<p>This function launches the web browser at the GTEx Portal and opens a tab for SNP identifier.</p>
+<pre><code class="language-Python">from pandasgwas.Browser import *
+open_in_dbsnp('rs56261590')
+</code></pre>
+<h3 id="param-variant_id_1">param variant_id</h3>
+<p>A variant(Single Nucleotide Polymorphism) identifier</p>
+<h2 id="function-open_study_in_gwas_catalogstudy_id-str-bool"><em>function</em> open_study_in_gwas_catalog(study_id: str) -&gt; bool</h2>
+<p>Browse GWAS Catalog entitie Study from the GWAS Web Graphical User Interface</p>
+<pre><code class="language-Python">from pandasgwas.Browser import *
+open_study_in_gwas_catalog('GCST000016')
+</code></pre>
+<h3 id="param-study_id">param study_id</h3>
+<p>A Study identifier</p>
+<h2 id="function-open_variant_in_gwas_catalogvariant_id-str-bool"><em>function</em> open_variant_in_gwas_catalog(variant_id: str) -&gt; bool</h2>
+<p>Browse GWAS Catalog entitie Single Nucleotide Polymorphism from the GWAS Web Graphical User Interface</p>
+<pre><code class="language-Python">from pandasgwas.Browser import *
+open_variant_in_gwas_catalog('rs146992477')
+</code></pre>
+<h3 id="param-variant_id_2">param variant_id</h3>
+<p>A variant(Single Nucleotide Polymorphism) identifier</p>
+<h2 id="function-open_trait_in_gwas_catalogefo_id-str-bool"><em>function</em> open_trait_in_gwas_catalog(efo_id: str) -&gt; bool</h2>
+<p>Browse GWAS Catalog entitie Trait from the GWAS Web Graphical User Interface</p>
+<pre><code class="language-Python">from pandasgwas.Browser import *
+open_trait_in_gwas_catalog('EFO_0004884')
+</code></pre>
+<h3 id="param-efo_id">param efo_id</h3>
+<p>An EFO Trait identifier</p>
+<h2 id="function-open_gene_in_gwas_cataloggene_name-str-bool"><em>function</em> open_gene_in_gwas_catalog(gene_name: str) -&gt; bool</h2>
+<p>Browse GWAS Catalog entitie Gene from the GWAS Web Graphical User Interface</p>
+<pre><code class="language-Python">from pandasgwas.Browser import *
+open_gene_in_gwas_catalog('DPP6')
+</code></pre>
+<h3 id="param-gene_name">param gene_name</h3>
+<p>Gene name</p>
+<h2 id="function-open_region_in_gwas_catalogregion_name_or_location-str-bool"><em>function</em> open_region_in_gwas_catalog(region_name_or_location: str) -&gt; bool</h2>
+<p>Browse GWAS Catalog entitie Region from the GWAS Web Graphical User Interface</p>
+<pre><code class="language-Python">from pandasgwas.Browser import *
+#region_name
+open_region_in_gwas_catalog('2q37.1')
+#location
+open_region_in_gwas_catalog('chr2:230100001-234700000')
+</code></pre>
+<h3 id="param-region_name_or_location">param region_name_or_location</h3>
+<p>Region name or chromosome and base pair location on the reference genome</p>
+<h2 id="function-open_publication_in_gwas_catalogpubmed_id-str-bool"><em>function</em> open_publication_in_gwas_catalog(pubmed_id: str) -&gt; bool</h2>
+<p>Browse GWAS Catalog entitie Publication from the GWAS Web Graphical User Interface</p>
+<pre><code class="language-Python">from pandasgwas.Browser import *
+open_publication_in_gwas_catalog('25533513')
+</code></pre>
+<h3 id="param-pubmed_id_1">param pubmed_id</h3>
+<p>A PubMed identifier</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Association/" class="btn btn-neutral float-left" title="Association"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../SingleNucleotidePolymorphism/" class="btn btn-neutral float-right" title="SingleNucleotidePolymorphism">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Association/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../SingleNucleotidePolymorphism/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
