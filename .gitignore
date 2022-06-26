@@ -1,0 +1,7 @@
+pandasgwas/__pycache__/
+tests/.pytest_cache/
+.idea/
+pandasgwas.egg-info/
+dist/
+build/
+docs/site/
