@@ -2,7 +2,7 @@
 ## Dependencies
 python: 3.8  
 pandas: 1.1.3  
-requests: 2.27.1  
+requests: 2.28.1  
 progressbar2: 4.0.0
 ## Documentation
 See [pandasGWAS Documentation](https://caotianze.github.io/pandasgwas/)
