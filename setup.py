@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pandasgwas",
-    version="0.99.6",
+    version="0.99.7",
     author="Cao Tianze",
     author_email="hnrcao@qq.com",
     description="A Python package to query, download and wrangle GWAS catalog data",
@@ -25,7 +25,7 @@ setuptools.setup(
     # package_dir={"": "pandasgwas"},
     packages=['pandasgwas'],
     python_requires=">=3.8",
-    install_requires=['pandas>=1.4.2', 'requests>=2.27.1', 'progressbar2>=4.0.0'],
+    install_requires=['pandas>=1.1.3, <=1.2.5', 'requests>=2.27.1', 'progressbar2>=4.0.0'],
     license="MIT",
     keywords="GWAS pandas",
     package_data={
