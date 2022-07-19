@@ -1,4 +1,4 @@
-# pandasGWAS: a Python package to query, download and wrangle GWAS catalog data
+# pandasGWAS: a Python package for easy retrieval of GWAS catalog data
 ## Dependencies
 python: 3.8  
 pandas: 1.1.3  
@@ -12,8 +12,8 @@ IDE: PyCharm 2022.1 (Community Edition)
 ## Installation
 `pip install pandasgwas`
 ## Example
+Get studies related to triple-negative breast cancer:
 ```Python
-# Get studies related to triple-negative breast cancer:
 from pandasgwas.get_studies import get_studies
 studies = get_studies(efo_trait = 'triple-negative breast cancer')
 studies.studies[0:4]

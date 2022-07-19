@@ -5,10 +5,10 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pandasgwas",
-    version="0.99.8",
+    version="0.99.9",
     author="Cao Tianze",
     author_email="hnrcao@qq.com",
-    description="A Python package to query, download and wrangle GWAS catalog data",
+    description="A Python package for easy retrieval of GWAS catalog data",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/caotianze/pandasgwas",
@@ -27,7 +27,7 @@ setuptools.setup(
     python_requires=">=3.8",
     install_requires=['pandas>=1.1.3, <=1.2.5', 'requests>=2.28.1', 'progressbar2>=4.0.0'],
     license="MIT",
-    keywords="GWAS pandas",
+    keywords=['gwas', 'genomics', 'snp', 'bioinformatics','pandas'],
     package_data={
         "": ["*.csv"]
     }
