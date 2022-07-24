@@ -1,7 +1,7 @@
 # pandasGWAS: a Python package for easy retrieval of GWAS catalog data
 ## Dependencies
 python: 3.8  
-pandas: 1.1.3  
+pandas: 1.4.3  
 requests: 2.28.1  
 progressbar2: 4.0.0
 ## Documentation

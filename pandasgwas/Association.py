@@ -2,7 +2,6 @@ from pandas import DataFrame, Series, json_normalize, set_option
 import numpy
 import warnings
 
-set_option('display.max_rows', None)
 set_option('display.max_columns', None)
 set_option('display.width', 1000)
 set_option('display.colheader_justify', 'center')

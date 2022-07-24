@@ -2,7 +2,6 @@ from pandas import DataFrame, Series, json_normalize, set_option
 import numpy
 import warnings
 
-set_option('display.max_rows', None)
 set_option('display.max_columns', None)
 set_option('display.width', 1000)
 set_option('display.colheader_justify', 'center')
@@ -58,8 +57,11 @@ class Study:
             lambda x: x if len(x) > 0 else numpy.nan)
         country_of_origin = country_of_origin.dropna()
         country_of_origin = country_of_origin.explode('countryOfOrigin')
-        country_of_origin[['majorArea', 'region', 'countryName']] = country_of_origin['countryOfOrigin'].apply(
-            lambda x: Series(data=[x['majorArea'], x['region'], x['countryName']]))
+        if len(country_of_origin)>0:
+            country_of_origin[['majorArea', 'region', 'countryName']] = country_of_origin['countryOfOrigin'].apply(
+                lambda x: Series(data=[x['majorArea'], x['region'], x['countryName']]))
+        else:
+            country_of_origin.assign(majorArea=[],region=[],countryName=[])
         country_of_origin = country_of_origin.drop(columns=['countryOfOrigin'])
         self.country_of_origin: DataFrame = country_of_origin.reset_index(drop=True)
         country_of_recruitment = ancestries[['countryOfRecruitment', 'accessionId', 'ancestryId']].copy()
@@ -67,8 +69,11 @@ class Study:
             lambda x: x if len(x) > 0 else numpy.nan)
         country_of_recruitment = country_of_recruitment.dropna()
         country_of_recruitment = country_of_recruitment.explode('countryOfRecruitment')
-        country_of_recruitment[['majorArea', 'region', 'countryName']] = country_of_recruitment[
-            'countryOfRecruitment'].apply(lambda x: Series([x['majorArea'], x['region'], x['countryName']]))
+        if len(country_of_recruitment)>0:
+            country_of_recruitment[['majorArea', 'region', 'countryName']] = country_of_recruitment[
+                'countryOfRecruitment'].apply(lambda x: Series([x['majorArea'], x['region'], x['countryName']]))
+        else:
+            country_of_recruitment.assign(majorArea=[],region=[],countryName=[])
         country_of_recruitment = country_of_recruitment.drop(columns=['countryOfRecruitment'])
         self.country_of_recruitment: DataFrame = country_of_recruitment.reset_index(drop=True)
 

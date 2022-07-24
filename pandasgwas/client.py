@@ -15,19 +15,20 @@ def get_studies(url: str, interactive: bool = True) -> List[Dict]:
         parsed_data = json.loads(r.text, object_hook=remove_links)
         if parsed_data.get('_embedded') is not None:
             study_list = parsed_data.get('_embedded').get("studies")
-            if parsed_data.get('page') is not None:
+            if parsed_data.get('page') is not None and parsed_data.get('page').get('totalPages') > 1:
                 if parsed_data.get('page').get('totalPages') > 100 and interactive:
                     answer = ask_yes_no_question(
                         "You are about to download to many data from the GWAS Catalog.\r\nThis might take several "
                         "minutes.\r\nDo you still want to proceed? (Yes or No)")
                     if answer == "NO":
                         return []
-                bar = progressbar.ProgressBar(max_value=parsed_data.get('page').get('totalPages')-1)
+                bar = progressbar.ProgressBar(max_value=parsed_data.get('page').get('totalPages')-1).start()
                 for i in range(1, parsed_data.get('page').get('totalPages')):
                     format_url = '%s?page=%d&size=20' % (url, i)
                     if '?' in url:
                         format_url = '%s&page=%d&size=20' % (url, i)
                     # print('http req:'+format_url)
+
                     bar.update(i)
                     r = s.get(format_url)
                     if r.status_code == 200:
@@ -35,6 +36,7 @@ def get_studies(url: str, interactive: bool = True) -> List[Dict]:
                             json.loads(r.text, object_hook=remove_links).get('_embedded').get("studies"))
                     else:
                         raise Exception('The request for %s failed: response code was %d' % (url, r.status_code))
+                bar.finish()
             return study_list
         else:
             return [parsed_data]
@@ -50,14 +52,14 @@ def get_SNPs(url: str, interactive: bool = True) -> List[Dict]:
         parsed_data = json.loads(r.text, object_hook=remove_links)
         if parsed_data.get('_embedded') is not None:
             variant_list = parsed_data.get('_embedded').get("singleNucleotidePolymorphisms")
-            if parsed_data.get('page') is not None:
+            if parsed_data.get('page') is not None and parsed_data.get('page').get('totalPages') > 1:
                 if parsed_data.get('page').get('totalPages') > 100 and interactive:
                     answer = ask_yes_no_question(
                         "You are about to download to many data from the GWAS Catalog.\r\nThis might take several "
                         "minutes.\r\nDo you still want to proceed? (Yes or No)")
                     if answer == "NO":
                         return []
-                bar = progressbar.ProgressBar(max_value=parsed_data.get('page').get('totalPages')-1)
+                bar = progressbar.ProgressBar(max_value=parsed_data.get('page').get('totalPages')-1).start()
                 for i in range(1, parsed_data.get('page').get('totalPages')):
                     format_url = '%s?page=%d&size=20' % (url, i)
                     if '?' in url:
@@ -71,6 +73,7 @@ def get_SNPs(url: str, interactive: bool = True) -> List[Dict]:
                                 "singleNucleotidePolymorphisms"))
                     else:
                         raise Exception('The request for %s failed: response code was %d' % (url, r.status_code))
+                bar.finish()
             return variant_list
         else:
             return [parsed_data]
@@ -86,14 +89,14 @@ def get_traits(url: str, interactive: bool = True) -> List[Dict]:
         parsed_data = json.loads(r.text, object_hook=remove_links)
         if parsed_data.get('_embedded') is not None:
             trait_list = parsed_data.get('_embedded').get("efoTraits")
-            if parsed_data.get('page') is not None:
+            if parsed_data.get('page') is not None and parsed_data.get('page').get('totalPages') > 1:
                 if parsed_data.get('page').get('totalPages') > 100 and interactive:
                     answer = ask_yes_no_question(
                         "You are about to download to many data from the GWAS Catalog.\r\nThis might take several "
                         "minutes.\r\nDo you still want to proceed? (Yes or No)")
                     if answer == "NO":
                         return []
-                bar = progressbar.ProgressBar(max_value=parsed_data.get('page').get('totalPages')-1)
+                bar = progressbar.ProgressBar(max_value=parsed_data.get('page').get('totalPages')-1).start()
                 for i in range(1, parsed_data.get('page').get('totalPages')):
                     format_url = '%s?page=%d&size=20' % (url, i)
                     if '?' in url:
@@ -106,6 +109,7 @@ def get_traits(url: str, interactive: bool = True) -> List[Dict]:
                             json.loads(r.text, object_hook=remove_links).get('_embedded').get("efoTraits"))
                     else:
                         raise Exception('The request for %s failed: response code was %d' % (url, r.status_code))
+                bar.finish()
             return trait_list
         else:
             return [parsed_data]
@@ -121,14 +125,14 @@ def get_associations(url: str, interactive: bool = True) -> List[Dict]:
         parsed_data = json.loads(r.text, object_hook=remove_links_get_id)
         if parsed_data.get('_embedded') is not None:
             association_list = parsed_data.get('_embedded').get("associations")
-            if parsed_data.get('page') is not None:
+            if parsed_data.get('page') is not None and parsed_data.get('page').get('totalPages') > 1:
                 if parsed_data.get('page').get('totalPages') > 100 and interactive:
                     answer = ask_yes_no_question(
                         "You are about to download to many data from the GWAS Catalog.\r\nThis might take several "
                         "minutes.\r\nDo you still want to proceed? (Yes or No)")
                     if answer == "NO":
                         return []
-                bar = progressbar.ProgressBar(max_value=parsed_data.get('page').get('totalPages')-1)
+                bar = progressbar.ProgressBar(max_value=parsed_data.get('page').get('totalPages')-1).start()
                 for i in range(1, parsed_data.get('page').get('totalPages')):
                     format_url = '%s?page=%d&size=20' % (url, i)
                     if '?' in url:
@@ -142,6 +146,7 @@ def get_associations(url: str, interactive: bool = True) -> List[Dict]:
                                 "associations"))
                     else:
                         raise Exception('The request for %s failed: response code was %d' % (url, r.status_code))
+                bar.finish()
             return association_list
         else:
             return [parsed_data]
