@@ -4,4 +4,4 @@ tests/.pytest_cache/
 pandasgwas.egg-info/
 dist/
 build/
-docs/site/
+site/
