@@ -1,6 +1,6 @@
 # pandasGWAS Documentation
 
-pandasGWAS:a Python package to query, download and wrangle GWAS catalog data
+pandasGWAS: a Python package for easy retrieval of GWAS catalog data
 
 ## Modules
 
