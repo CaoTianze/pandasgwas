@@ -40,5 +40,15 @@ variants.variants[['rsId', 'functionalClass']]
 # 3   rs3757318       intron_variant
 # 4  rs10771399   intergenic_variant
 ```
+Aggregate queried results using mathematical symbols
+```Python
+from pandasgwas.get_studies import get_studies
+study1=get_studies(reported_trait='Suicide risk')
+study2=get_studies(reported_trait="Dupuytren's disease")
+study3=get_studies(reported_trait="Triglycerides")
+study4=get_studies(reported_trait="Retinal vascular caliber")
+study5=get_studies(reported_trait="Non-small cell lung cancer (survival)")
+all_studies=study1+study2+study3+study4+study5
+```
 ## Similar projects
 R package [gwasrapidd](https://github.com/ramiromagno/gwasrapidd) by Ramiro Magno
