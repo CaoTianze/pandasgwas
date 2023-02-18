@@ -14,3 +14,4 @@ pandasGWAS: a Python package for easy retrieval of GWAS Catalog data
 * Variant -  Python class to represent a set of Single Nucleotide Polymorphisms
 * Study - Python class to represent a set of Studies
 * Trait - Python class to represent a set of EFO Traits
+* utility - A set of utility functions
