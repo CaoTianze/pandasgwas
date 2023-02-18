@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.99.10",
     author="Cao Tianze",
     author_email="hnrcao@qq.com",
-    description="A Python package for easy retrieval of GWAS catalog data",
+    description="A Python package for easy retrieval of GWAS Catalog data",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/caotianze/pandasgwas",

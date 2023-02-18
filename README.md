@@ -1,4 +1,4 @@
-# pandasGWAS: a Python package for easy retrieval of GWAS catalog data
+# pandasGWAS: a Python package for easy retrieval of GWAS Catalog data
 ## Dependencies
 python: 3.8  
 pandas: 1.4.3  
@@ -6,6 +6,11 @@ requests: 2.28.1
 progressbar2: 4.0.0
 ## Documentation
 See [pandasGWAS Documentation](https://caotianze.github.io/pandasgwas/)
+## Licensing Information
+### Source Code
+MIT License
+### Data from NHGRI-EBI GWAS Catalog
+The NHGRI-EBI GWAS Catalog and all its contents are available under the general [Terms of Use for EMBL-EBI Services](https://www.ebi.ac.uk/about/terms-of-use). Summary statistics are made available under [CC0](https://creativecommons.org/publicdomain/zero/1.0/) unless [otherwise stated](https://www.ebi.ac.uk/gwas/docs/faq#faq-H7).
 ## Development Environment
 OS: Windows10 Professional  
 IDE: PyCharm 2022.1 (Community Edition)
@@ -14,7 +19,7 @@ IDE: PyCharm 2022.1 (Community Edition)
 ## Example
 Get studies related to triple-negative breast cancer:
 ```Python
-from pandasgwas.get_studies import get_studies
+from pandasgwas import get_studies
 studies = get_studies(efo_trait = 'triple-negative breast cancer')
 studies.studies[0:4]
 #                  initialSampleSize                    gxe    gxg   snpCount  qualifier  imputed  pooled studyDesignComment  accessionId   fullPvalueSet  userRequested            platforms                                ancestries                                   genotypingTechnologies                             replicationSampleSize                                diseaseTrait.trait                 publicationInfo.pubmedId publicationInfo.publicationDate publicationInfo.publication               publicationInfo.title                publicationInfo.author.fullname publicationInfo.author.orcid
@@ -23,16 +28,17 @@ studies.studies[0:4]
 #2                5,631 European ancestry individuals  False  False  1.000e+07    None     True     False        None         GCST90029052      False          False                                  []  [{'type': 'initial', 'numberOfIndividuals': 56...  [{'genotypingTechnology': 'Genome-wide genotyp...                                                 NA  15-year breast cancer-specific survival (ER ne...         34407845                    2021-08-18                 Breast Cancer Res      Association of germline genetic variants with ...                 Morra A                             None
 ```
 Find associated variants with study GCST002305:
+
 ```Python
-from pandasgwas.get_SNPs import get_variants
-variants = get_variants(study_id = 'GCST002305')
-variants.single_nucleotide_polymorphisms[['rsId', 'functionalClass']]
+from pandasgwas import get_variants
+variants = get_variants(study_id='GCST002305')
+variants.variants[['rsId', 'functionalClass']]
 #      rsId      functionalClass   
-#0   rs4245739  3_prime_UTR_variant
-#1   rs2363956     missense_variant
-#2  rs10069690       intron_variant
-#3   rs3757318       intron_variant
-#4  rs10771399   intergenic_variant
+# 0   rs4245739  3_prime_UTR_variant
+# 1   rs2363956     missense_variant
+# 2  rs10069690       intron_variant
+# 3   rs3757318       intron_variant
+# 4  rs10771399   intergenic_variant
 ```
 ## Similar projects
 R package [gwasrapidd](https://github.com/ramiromagno/gwasrapidd) by Ramiro Magno

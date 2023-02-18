@@ -8,7 +8,7 @@ set_option('display.colheader_justify', 'center')
 set_option('display.precision', 3)
 
 
-class SingleNucleotidePolymorphism:
+class Variant:
     def __init__(self, data: list = None):
         if data is None:
             data = []
@@ -19,7 +19,7 @@ class SingleNucleotidePolymorphism:
             warnings.warn("Data is None, DataFrame will be empty")
         self.raw_data = data
         if data is None or len(data) == 0:
-            self.single_nucleotide_polymorphisms = DataFrame(
+            self.variants = DataFrame(
                 columns=['rsId', 'merged', 'functionalClass', 'lastUpdateDate', 'locations', 'genomicContexts'])
             self.locations = DataFrame(columns=['chromosomeName', 'chromosomePosition', 'region.name', 'rsId'])
             self.genomic_contexts = DataFrame(
@@ -30,7 +30,7 @@ class SingleNucleotidePolymorphism:
             self.ensembl_gene_ids = DataFrame(columns=['rsId', 'genomicContextId', 'ensemblGeneId'])
             self.entrez_gene_ids = DataFrame(columns=['rsId', 'genomicContextId', 'entrezGeneId'])
             return
-        self.single_nucleotide_polymorphisms: DataFrame = json_normalize(data, max_level=2)
+        self.variants: DataFrame = json_normalize(data, max_level=2)
         self.locations: DataFrame = json_normalize(data, record_path=['locations'], meta=['rsId'])
         genomic_contexts = json_normalize(data, record_path=['genomicContexts'], meta=['rsId'])
         genomic_contexts['genomicContextId'] = Series(data=range(0, len(genomic_contexts)))
@@ -55,7 +55,7 @@ class SingleNucleotidePolymorphism:
         self.entrez_gene_ids: DataFrame = entrez_gene_ids.reset_index(drop=True)
 
     def __len__(self):
-        return len(self.single_nucleotide_polymorphisms)
+        return len(self.variants)
 
     def __getitem__(self, item):
         if isinstance(item, str) or isinstance(item, int):
@@ -79,10 +79,10 @@ class SingleNucleotidePolymorphism:
                 sub_set.append(raw_data[i])
             else:
                 raise TypeError('Invalid item type: {}'.format(type(i)))
-        return SingleNucleotidePolymorphism(sub_set)
+        return Variant(sub_set)
 
     def __add__(self, other):
-        return SingleNucleotidePolymorphism(self.raw_data + other.raw_data)
+        return Variant(self.raw_data + other.raw_data)
 
     def __sub__(self, other):
         self_key_set = set()
@@ -97,7 +97,7 @@ class SingleNucleotidePolymorphism:
         data = []
         for k in sub_key:
             data.append(self_dict[k])
-        return SingleNucleotidePolymorphism(data)
+        return Variant(data)
 
     def __and__(self, other):
         self_key_set = set()
@@ -112,7 +112,7 @@ class SingleNucleotidePolymorphism:
         data = []
         for k in sub_key:
             data.append(self_dict[k])
-        return SingleNucleotidePolymorphism(data)
+        return Variant(data)
 
     def __or__(self, other):
         and_dict = {}
@@ -121,7 +121,7 @@ class SingleNucleotidePolymorphism:
         for j in other.raw_data:
             and_dict[j['rsId']] = j
         data = list(and_dict.values())
-        return SingleNucleotidePolymorphism(data)
+        return Variant(data)
 
     def __xor__(self, other):
         self_key_set = set()
@@ -137,7 +137,7 @@ class SingleNucleotidePolymorphism:
         data = []
         for k in sub_key:
             data.append(and_dict[k])
-        return SingleNucleotidePolymorphism(data)
+        return Variant(data)
 
     def __eq__(self, other):
         if self is None or other is None:

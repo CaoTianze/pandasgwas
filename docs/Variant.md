@@ -1,11 +1,11 @@
-# SingleNucleotidePolymorphism
-## *class* SingleNucleotidePolymorphism.SingleNucleotidePolymorphism()
+# Variant
+## *class* Variant.Variant()
 
 Python class to represent a set of GWAS Catalog Single Nucleotide Polymorphism. For more information, see "[GWAS CATALOG API Guide](https://www.ebi.ac.uk/gwas/rest/docs/api)"
 
 ```Python
 # get Single Nucleotide Polymorphism by study_id
-from pandasgwas.get_SNPs import get_variants
+from pandasgwas.get_variants import get_variants
 
 snps = get_variants(study_id='GCST000854')
 ```
