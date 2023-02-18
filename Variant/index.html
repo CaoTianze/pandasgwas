@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>SingleNucleotidePolymorphism - pandasGWAS Documentation</title>
+    <title>Variant - pandasGWAS Documentation</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "SingleNucleotidePolymorphism";
-        var mkdocs_page_input_path = "SingleNucleotidePolymorphism.md";
+        var mkdocs_page_name = "Variant";
+        var mkdocs_page_input_path = "Variant.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -52,10 +52,18 @@
                 <li class="toctree-l1"><a class="reference internal" href="../Browser/">Browser</a>
                 </li>
               </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Study/">Study</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Trait/">Trait</a>
+                </li>
+              </ul>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">SingleNucleotidePolymorphism</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Variant</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#class-singlenucleotidepolymorphismsinglenucleotidepolymorphism">class SingleNucleotidePolymorphism.SingleNucleotidePolymorphism()</a>
+    <li class="toctree-l2"><a class="reference internal" href="#class-variantvariant">class Variant.Variant()</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#property-single_nucleotide_polymorphisms">property single_nucleotide_polymorphisms</a>
     </li>
@@ -73,18 +81,6 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../Study/">Study</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../Trait/">Trait</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../get_SNPs/">get_SNPs</a>
-                </li>
-              </ul>
-              <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../get_associations/">get_associations</a>
                 </li>
               </ul>
@@ -94,6 +90,10 @@
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../get_traits/">get_traits</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../get_variants/">get_variants</a>
                 </li>
               </ul>
               <ul>
@@ -114,7 +114,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>SingleNucleotidePolymorphism</li>
+      <li>Variant</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -123,11 +123,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="singlenucleotidepolymorphism">SingleNucleotidePolymorphism</h1>
-<h2 id="class-singlenucleotidepolymorphismsinglenucleotidepolymorphism"><em>class</em> SingleNucleotidePolymorphism.SingleNucleotidePolymorphism()</h2>
+                <h1 id="variant">Variant</h1>
+<h2 id="class-variantvariant"><em>class</em> Variant.Variant()</h2>
 <p>Python class to represent a set of GWAS Catalog Single Nucleotide Polymorphism. For more information, see "<a href="https://www.ebi.ac.uk/gwas/rest/docs/api">GWAS CATALOG API Guide</a>"</p>
 <pre><code class="language-Python"># get Single Nucleotide Polymorphism by study_id
-from pandasgwas.get_SNPs import get_variants
+from pandasgwas.get_variants import get_variants
 
 snps = get_variants(study_id='GCST000854')
 </code></pre>
@@ -150,8 +150,8 @@ A DataFrame to represent column gene.entrezGeneIds from genomic_contexts</p>
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../Browser/" class="btn btn-neutral float-left" title="Browser"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../Study/" class="btn btn-neutral float-right" title="Study">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../Trait/" class="btn btn-neutral float-left" title="Trait"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../get_associations/" class="btn btn-neutral float-right" title="get_associations">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -174,10 +174,10 @@ A DataFrame to represent column gene.entrezGeneIds from genomic_contexts</p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Browser/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../Trait/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../Study/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../get_associations/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

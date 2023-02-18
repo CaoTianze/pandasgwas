@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>get_SNPs - pandasGWAS Documentation</title>
+    <title>get_variants - pandasGWAS Documentation</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "get_SNPs";
-        var mkdocs_page_input_path = "get_SNPs.md";
+        var mkdocs_page_name = "get_variants";
+        var mkdocs_page_input_path = "get_variants.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -53,10 +53,6 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../SingleNucleotidePolymorphism/">SingleNucleotidePolymorphism</a>
-                </li>
-              </ul>
-              <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../Study/">Study</a>
                 </li>
               </ul>
@@ -64,102 +60,8 @@
                 <li class="toctree-l1"><a class="reference internal" href="../Trait/">Trait</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">get_SNPs</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_study_idstudy_id-str-interactive-bool-true-singlenucleotidepolymorphism">function get_variants_by_study_id(study_id: str, interactive: bool = True) -&gt; SingleNucleotidePolymorphism</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-study_id">param study_id</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive">param interactive</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_association_idassociation_id-str-interactive-bool-true-singlenucleotidepolymorphism">function get_variants_by_association_id(association_id: str, interactive: bool = True) -&gt; SingleNucleotidePolymorphism</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-association_id">param association_id</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_1">param interactive</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_variant_idvariant_id-str-interactive-bool-true-singlenucleotidepolymorphism">function get_variants_by_variant_id(variant_id: str, interactive: bool = True) -&gt; SingleNucleotidePolymorphism</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-variant_id">param variant_id</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_2">param interactive</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_efo_idefo_id-str-interactive-bool-true-singlenucleotidepolymorphism">function get_variants_by_efo_id(efo_id: str, interactive: bool = True) -&gt; SingleNucleotidePolymorphism</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-efo_id">param efo_id</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_3">param interactive</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_pubmed_idpubmed_id-str-interactive-bool-true-singlenucleotidepolymorphism">function get_variants_by_pubmed_id(pubmed_id: str, interactive: bool = True) -&gt; SingleNucleotidePolymorphism</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-pubmed_id">param pubmed_id</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_4">param interactive</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_genomic_rangechromosome-str-start-int-end-int-interactive-bool-true-singlenucleotidepolymorphism">function get_variants_by_genomic_range(chromosome: str, start: int, end: int, interactive: bool = True) -&gt; SingleNucleotidePolymorphism</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-chromosome">param chromosome</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-start">param start</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-end">param end</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_5">param interactive</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_cytogenetic_bandcytogenetic_band-str-interactive-bool-true-singlenucleotidepolymorphism">function get_variants_by_cytogenetic_band(cytogenetic_band: str, interactive: bool = True) -&gt; SingleNucleotidePolymorphism</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-cytogenetic_band">param cytogenetic_band</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_6">param interactive</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_gene_namegene_name-str-interactive-bool-true-singlenucleotidepolymorphism">function get_variants_by_gene_name(gene_name: str, interactive: bool = True) -&gt; SingleNucleotidePolymorphism</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-gene_name">param gene_name</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_7">param interactive</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_efo_traitefo_trait-str-interactive-bool-true-singlenucleotidepolymorphism">function get_variants_by_efo_trait(efo_trait: str, interactive: bool = True) -&gt; SingleNucleotidePolymorphism</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-efo_trait">param efo_trait</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_8">param interactive</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_reported_traitreported_trait-str-interactive-bool-true-singlenucleotidepolymorphism">function get_variants_by_reported_trait(reported_trait: str, interactive: bool = True) -&gt; SingleNucleotidePolymorphism</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-reported_trait">param reported_trait</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_9">param interactive</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_allinteractive-bool-true-singlenucleotidepolymorphism">function get_variants_all(interactive: bool = True) -&gt; SingleNucleotidePolymorphism</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_10">param interactive</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_variantsstudy_id-str-none-association_id-str-none-variant_id-str-none-efo_id-str-none-pubmed_id-str-none-genomic_range-listint-none-gene_name-str-none-efo_trait-str-none-reported_trait-str-none-set_operation-str-bind-interactive-bool-true-singlenucleotidepolymorphism">function get_variants(study_id: str = None, association_id: str = None, variant_id: str = None, efo_id: str = None, pubmed_id: str = None, genomic_range: List[int] = None, gene_name: str = None, efo_trait: str = None, reported_trait: str = None, set_operation: str = 'bind', interactive: bool = True) -&gt; SingleNucleotidePolymorphism</a>
-    </li>
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Variant/">Variant</a>
                 </li>
               </ul>
               <ul>
@@ -172,6 +74,104 @@
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../get_traits/">get_traits</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">get_variants</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_study_idstudy_id-str-interactive-bool-true-variant">function get_variants_by_study_id(study_id: str, interactive: bool = True) -&gt; Variant</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-study_id">param study_id</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#param-interactive">param interactive</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_association_idassociation_id-str-interactive-bool-true-variant">function get_variants_by_association_id(association_id: str, interactive: bool = True) -&gt; Variant</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-association_id">param association_id</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_1">param interactive</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_variant_idvariant_id-str-interactive-bool-true-variant">function get_variants_by_variant_id(variant_id: str, interactive: bool = True) -&gt; Variant</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-variant_id">param variant_id</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_2">param interactive</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_efo_idefo_id-str-interactive-bool-true-variant">function get_variants_by_efo_id(efo_id: str, interactive: bool = True) -&gt; Variant</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-efo_id">param efo_id</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_3">param interactive</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_pubmed_idpubmed_id-str-interactive-bool-true-variant">function get_variants_by_pubmed_id(pubmed_id: str, interactive: bool = True) -&gt; Variant</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-pubmed_id">param pubmed_id</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_4">param interactive</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_genomic_rangechromosome-str-start-int-end-int-interactive-bool-true-variant">function get_variants_by_genomic_range(chromosome: str, start: int, end: int, interactive: bool = True) -&gt; Variant</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-chromosome">param chromosome</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#param-start">param start</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#param-end">param end</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_5">param interactive</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_cytogenetic_bandcytogenetic_band-str-interactive-bool-true-variant">function get_variants_by_cytogenetic_band(cytogenetic_band: str, interactive: bool = True) -&gt; Variant</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-cytogenetic_band">param cytogenetic_band</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_6">param interactive</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_gene_namegene_name-str-interactive-bool-true-variant">function get_variants_by_gene_name(gene_name: str, interactive: bool = True) -&gt; Variant</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-gene_name">param gene_name</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_7">param interactive</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_efo_traitefo_trait-str-interactive-bool-true-variant">function get_variants_by_efo_trait(efo_trait: str, interactive: bool = True) -&gt; Variant</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-efo_trait">param efo_trait</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_8">param interactive</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_reported_traitreported_trait-str-interactive-bool-true-variant">function get_variants_by_reported_trait(reported_trait: str, interactive: bool = True) -&gt; Variant</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-reported_trait">param reported_trait</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_9">param interactive</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_allinteractive-bool-true-variant">function get_variants_all(interactive: bool = True) -&gt; Variant</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_10">param interactive</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-get_variantsstudy_id-str-none-association_id-str-none-variant_id-str-none-efo_id-str-none-pubmed_id-str-none-genomic_range-listint-none-gene_name-str-none-efo_trait-str-none-reported_trait-str-none-set_operation-str-bind-interactive-bool-true-variant">function get_variants(study_id: str = None, association_id: str = None, variant_id: str = None, efo_id: str = None, pubmed_id: str = None, genomic_range: List[int] = None, gene_name: str = None, efo_trait: str = None, reported_trait: str = None, set_operation: str = 'bind', interactive: bool = True) -&gt; Variant</a>
+    </li>
+    </ul>
                 </li>
               </ul>
               <ul>
@@ -192,7 +192,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>get_SNPs</li>
+      <li>get_variants</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -201,56 +201,62 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="get_snps">get_SNPs</h1>
+                <h1 id="get_variants">get_variants</h1>
 <p>Get Single Nucleotide Polymorphism function based on different search criteria</p>
-<h2 id="function-get_variants_by_study_idstudy_id-str-interactive-bool-true-singlenucleotidepolymorphism"><em>function</em> get_variants_by_study_id(study_id: str, interactive: bool = True) -&gt; SingleNucleotidePolymorphism</h2>
+<h2 id="function-get_variants_by_study_idstudy_id-str-interactive-bool-true-variant"><em>function</em> get_variants_by_study_id(study_id: str, interactive: bool = True) -&gt; Variant</h2>
 <p>Get GWAS Catalog Single Nucleotide Polymorphisms by Study identifier</p>
-<pre><code class="language-Python">from pandasgwas.get_SNPs import get_variants_by_study_id
+<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_study_id
+
 snps = get_variants_by_study_id('GCST000854')
 </code></pre>
 <h3 id="param-study_id">param study_id</h3>
 <p>Study identifier, accessionId in Study</p>
 <h3 id="param-interactive">param interactive</h3>
 <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_variants_by_association_idassociation_id-str-interactive-bool-true-singlenucleotidepolymorphism"><em>function</em> get_variants_by_association_id(association_id: str, interactive: bool = True) -&gt; SingleNucleotidePolymorphism</h2>
+<h2 id="function-get_variants_by_association_idassociation_id-str-interactive-bool-true-variant"><em>function</em> get_variants_by_association_id(association_id: str, interactive: bool = True) -&gt; Variant</h2>
 <p>Get GWAS Catalog Single Nucleotide Polymorphisms by by their Association identifier</p>
-<pre><code class="language-Python">from pandasgwas.get_SNPs import get_variants_by_association_id
+<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_association_id
+
 snps = get_variants_by_association_id('16603')
 </code></pre>
 <h3 id="param-association_id">param association_id</h3>
 <p>Association identifier, associationId in Association</p>
 <h3 id="param-interactive_1">param interactive</h3>
 <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_variants_by_variant_idvariant_id-str-interactive-bool-true-singlenucleotidepolymorphism"><em>function</em> get_variants_by_variant_id(variant_id: str, interactive: bool = True) -&gt; SingleNucleotidePolymorphism</h2>
+<h2 id="function-get_variants_by_variant_idvariant_id-str-interactive-bool-true-variant"><em>function</em> get_variants_by_variant_id(variant_id: str, interactive: bool = True) -&gt; Variant</h2>
 <p>Get GWAS Catalog Single Nucleotide Polymorphisms by Single Nucleotide Polymorphism identifier</p>
-<pre><code class="language-Python">from pandasgwas.get_SNPs import get_variants_by_variant_id
+<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_variant_id
+
 snps = get_variants_by_variant_id('rs7744020')
 </code></pre>
 <h3 id="param-variant_id">param variant_id</h3>
 <p>Single Nucleotide Polymorphism identifier, rsId in Single Nucleotide Polymorphism</p>
 <h3 id="param-interactive_2">param interactive</h3>
 <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_variants_by_efo_idefo_id-str-interactive-bool-true-singlenucleotidepolymorphism"><em>function</em> get_variants_by_efo_id(efo_id: str, interactive: bool = True) -&gt; SingleNucleotidePolymorphism</h2>
+<h2 id="function-get_variants_by_efo_idefo_id-str-interactive-bool-true-variant"><em>function</em> get_variants_by_efo_id(efo_id: str, interactive: bool = True) -&gt; Variant</h2>
 <p>Get GWAS Catalog Single Nucleotide Polymorphisms by their EFO Trait identifier</p>
-<pre><code class="language-Python">from pandasgwas.get_SNPs import get_variants_by_efo_id
+<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_efo_id
+
 snps = get_variants_by_efo_id('EFO_0001065')
 </code></pre>
 <h3 id="param-efo_id">param efo_id</h3>
 <p>EFO Trait identifier, shortForm in EFO Trait</p>
 <h3 id="param-interactive_3">param interactive</h3>
 <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_variants_by_pubmed_idpubmed_id-str-interactive-bool-true-singlenucleotidepolymorphism"><em>function</em> get_variants_by_pubmed_id(pubmed_id: str, interactive: bool = True) -&gt; SingleNucleotidePolymorphism</h2>
+<h2 id="function-get_variants_by_pubmed_idpubmed_id-str-interactive-bool-true-variant"><em>function</em> get_variants_by_pubmed_id(pubmed_id: str, interactive: bool = True) -&gt; Variant</h2>
 <p>Get GWAS Catalog Single Nucleotide Polymorphisms by PubMed identifiers</p>
-<pre><code class="language-Python">from pandasgwas.get_SNPs import get_variants_by_pubmed_id
+<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_pubmed_id
+
 snps = get_variants_by_pubmed_id('21041247')
 </code></pre>
 <h3 id="param-pubmed_id">param pubmed_id</h3>
 <p>PubMed identifier</p>
 <h3 id="param-interactive_4">param interactive</h3>
 <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_variants_by_genomic_rangechromosome-str-start-int-end-int-interactive-bool-true-singlenucleotidepolymorphism"><em>function</em> get_variants_by_genomic_range(chromosome: str, start: int, end: int, interactive: bool = True) -&gt; SingleNucleotidePolymorphism</h2>
+<h2 id="function-get_variants_by_genomic_rangechromosome-str-start-int-end-int-interactive-bool-true-variant"><em>function</em> get_variants_by_genomic_range(chromosome: str, start: int, end: int, interactive: bool = True) -&gt; Variant</h2>
 <p>Get GWAS Catalog Single Nucleotide Polymorphisms</p>
-<pre><code class="language-Python">from pandasgwas.get_SNPs import get_variants_by_genomic_range
+<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_genomic_range
+
 snps = get_variants_by_genomic_range('1', 2300001, 5300000)
 </code></pre>
 <h3 id="param-chromosome">param chromosome</h3>
@@ -261,57 +267,62 @@ snps = get_variants_by_genomic_range('1', 2300001, 5300000)
 <p>End position of range (inclusive).</p>
 <h3 id="param-interactive_5">param interactive</h3>
 <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_variants_by_cytogenetic_bandcytogenetic_band-str-interactive-bool-true-singlenucleotidepolymorphism"><em>function</em> get_variants_by_cytogenetic_band(cytogenetic_band: str, interactive: bool = True) -&gt; SingleNucleotidePolymorphism</h2>
+<h2 id="function-get_variants_by_cytogenetic_bandcytogenetic_band-str-interactive-bool-true-variant"><em>function</em> get_variants_by_cytogenetic_band(cytogenetic_band: str, interactive: bool = True) -&gt; Variant</h2>
 <p>Get GWAS Catalog Single Nucleotide Polymorphisms</p>
-<pre><code class="language-Python">from pandasgwas.get_SNPs import get_variants_by_cytogenetic_band
+<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_cytogenetic_band
+
 snps = get_variants_by_cytogenetic_band('1p36.32')
 </code></pre>
 <h3 id="param-cytogenetic_band">param cytogenetic_band</h3>
 <p>Cytogenetic bands of the form '1p36.11'</p>
 <h3 id="param-interactive_6">param interactive</h3>
 <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_variants_by_gene_namegene_name-str-interactive-bool-true-singlenucleotidepolymorphism"><em>function</em> get_variants_by_gene_name(gene_name: str, interactive: bool = True) -&gt; SingleNucleotidePolymorphism</h2>
+<h2 id="function-get_variants_by_gene_namegene_name-str-interactive-bool-true-variant"><em>function</em> get_variants_by_gene_name(gene_name: str, interactive: bool = True) -&gt; Variant</h2>
 <p>Get GWAS Catalog Single Nucleotide Polymorphisms</p>
-<pre><code class="language-Python">from pandasgwas.get_SNPs import get_variants_by_gene_name
+<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_gene_name
+
 snps = get_variants_by_gene_name('KIAA0319')
 </code></pre>
 <h3 id="param-gene_name">param gene_name</h3>
 <p>Gene names</p>
 <h3 id="param-interactive_7">param interactive</h3>
 <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_variants_by_efo_traitefo_trait-str-interactive-bool-true-singlenucleotidepolymorphism"><em>function</em> get_variants_by_efo_trait(efo_trait: str, interactive: bool = True) -&gt; SingleNucleotidePolymorphism</h2>
+<h2 id="function-get_variants_by_efo_traitefo_trait-str-interactive-bool-true-variant"><em>function</em> get_variants_by_efo_trait(efo_trait: str, interactive: bool = True) -&gt; Variant</h2>
 <p>Get GWAS Catalog Single Nucleotide Polymorphisms that match trait description</p>
-<pre><code class="language-Python">from pandasgwas.get_SNPs import get_variants_by_efo_trait
+<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_efo_trait
+
 snps = get_variants_by_efo_trait('MHPG measurement')
 </code></pre>
 <h3 id="param-efo_trait">param efo_trait</h3>
 <p>Trait description</p>
 <h3 id="param-interactive_8">param interactive</h3>
 <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_variants_by_reported_traitreported_trait-str-interactive-bool-true-singlenucleotidepolymorphism"><em>function</em> get_variants_by_reported_trait(reported_trait: str, interactive: bool = True) -&gt; SingleNucleotidePolymorphism</h2>
+<h2 id="function-get_variants_by_reported_traitreported_trait-str-interactive-bool-true-variant"><em>function</em> get_variants_by_reported_trait(reported_trait: str, interactive: bool = True) -&gt; Variant</h2>
 <p>Get GWAS Catalog Single Nucleotide Polymorphisms that match the reported traits, as reported by the original authors of the study.</p>
-<pre><code class="language-Python">from pandasgwas.get_SNPs import get_variants_by_reported_trait
+<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_reported_trait
+
 snps = get_variants_by_reported_trait(&quot;Dupuytren's disease&quot;)
 </code></pre>
 <h3 id="param-reported_trait">param reported_trait</h3>
 <p>Trait are reported by the original authors of the study</p>
 <h3 id="param-interactive_9">param interactive</h3>
 <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_variants_allinteractive-bool-true-singlenucleotidepolymorphism"><em>function</em> get_variants_all(interactive: bool = True) -&gt; SingleNucleotidePolymorphism</h2>
+<h2 id="function-get_variants_allinteractive-bool-true-variant"><em>function</em> get_variants_all(interactive: bool = True) -&gt; Variant</h2>
 <p>Get all Single Nucleotide Polymorphisms</p>
-<pre><code class="language-Python">from pandasgwas.get_SNPs import get_variants_all
+<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_all
+
 snps = get_variants_all()
 </code></pre>
 <h3 id="param-interactive_10">param interactive</h3>
 <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_variantsstudy_id-str-none-association_id-str-none-variant_id-str-none-efo_id-str-none-pubmed_id-str-none-genomic_range-listint-none-gene_name-str-none-efo_trait-str-none-reported_trait-str-none-set_operation-str-bind-interactive-bool-true-singlenucleotidepolymorphism"><em>function</em> get_variants(study_id: str = None, association_id: str = None, variant_id: str = None, efo_id: str = None, pubmed_id: str = None, genomic_range: List[int] = None, gene_name: str = None, efo_trait: str = None, reported_trait: str = None, set_operation: str = 'bind', interactive: bool = True) -&gt; SingleNucleotidePolymorphism</h2>
+<h2 id="function-get_variantsstudy_id-str-none-association_id-str-none-variant_id-str-none-efo_id-str-none-pubmed_id-str-none-genomic_range-listint-none-gene_name-str-none-efo_trait-str-none-reported_trait-str-none-set_operation-str-bind-interactive-bool-true-variant"><em>function</em> get_variants(study_id: str = None, association_id: str = None, variant_id: str = None, efo_id: str = None, pubmed_id: str = None, genomic_range: List[int] = None, gene_name: str = None, efo_trait: str = None, reported_trait: str = None, set_operation: str = 'bind', interactive: bool = True) -&gt; Variant</h2>
 <p>Retrieves Single Nucleotide Polymorphisms via the NHGRI-EBI GWAS Catalog REST API. The REST API is queried multiple times with the criteria passed as arguments. By default all Single Nucleotide Polymorphisms that match the criteria supplied in the arguments are retrieved: this corresponds to the default set_operation set to 'bind', If you rather have only the Single Nucleotide Polymorphisms that match simultaneously all criteria provided, then set set_operation to 'intersection'.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../Trait/" class="btn btn-neutral float-left" title="Trait"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../get_associations/" class="btn btn-neutral float-right" title="get_associations">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../get_traits/" class="btn btn-neutral float-left" title="get_traits"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../set_operation/" class="btn btn-neutral float-right" title="set_operation">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -334,10 +345,10 @@ snps = get_variants_all()
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Trait/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../get_traits/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../get_associations/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../set_operation/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
