@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>set_operation - pandasGWAS Documentation</title>
+    <title>utility - pandasGWAS Documentation</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "set_operation";
-        var mkdocs_page_input_path = "set_operation.md";
+        var mkdocs_page_name = "utility";
+        var mkdocs_page_input_path = "utility.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -80,26 +80,16 @@
                 <li class="toctree-l1"><a class="reference internal" href="../get_variants/">get_variants</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">set_operation</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#function-bindab-c">function bind(a,b)-&gt;c</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-intersectab-c">function intersect(a,b)-&gt;c</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-set_diffab-c">function set_diff(a,b)-&gt;c</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-set_xorab-c">function set_xor(a,b)-&gt;c</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-unionab-c">function union(a,b)-&gt;c</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-set_equalab-bool">function set_equal(a,b)-&gt;bool</a>
-    </li>
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../set_operation/">set_operation</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../utility/">utility</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">utility</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#function-get_child_efoefo_id-str-interactive-bool-true-liststr">function  get_child_efo(efo_id: str, interactive: bool = True) -&gt; list[str]</a>
+    </li>
+    </ul>
                 </li>
               </ul>
       </div>
@@ -116,7 +106,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>set_operation</li>
+      <li>utility</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -125,54 +115,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="set_operation">set_operation</h1>
-<p>Set operations for objects of same class</p>
-<pre><code class="language-Python"># set operation in EFO Trait
-from pandasgwas.get_traits import get_traits
-from pandasgwas.set_operation import *
-traits1 = get_traits(study_id='GCST000854', efo_id='EFO_0001065')
-traits2 = get_traits(study_id='GCST000854', efo_uri='http://www.ebi.ac.uk/efo/EFO_0005133')
-#Equivalent to traits3 = traits1 + traits2
-traits3 = bind(traits1, traits2)
-traits1 = get_traits(study_id='GCST000854', efo_id='EFO_0001065')
-traits2 = get_traits(study_id='GCST000854', efo_uri='http://www.ebi.ac.uk/efo/EFO_0005133')
-#Equivalent to traits3 = traits1 &amp; traits2
-traits3 = intersect(traits1, traits2)
-traits1 = get_traits(study_id='GCST000854', efo_id='EFO_0001065')
-traits2 = get_traits(study_id='GCST000854', efo_uri='http://www.ebi.ac.uk/efo/EFO_0005133')
-#Equivalent to traits3 = traits1 - traits2
-traits3 = set_diff(traits1, traits2)
-traits1 = get_traits(study_id='GCST000854', efo_id='EFO_0001065')
-traits2 = get_traits(study_id='GCST000854', efo_uri='http://www.ebi.ac.uk/efo/EFO_0005133')
-#Equivalent to traits3 = traits1 ^ traits2
-traits3 = set_xor(traits1, traits2)
-traits1 = get_traits(study_id='GCST000854', efo_id='EFO_0001065')
-traits2 = get_traits(study_id='GCST000854', efo_uri='http://www.ebi.ac.uk/efo/EFO_0005133')
-#Equivalent to traits3 = traits1 | traits2
-traits3 = union(traits1, traits2)
-traits1 = get_traits(study_id='GCST000854')
-traits2 = get_traits(study_id='GCST000854')
-#Equivalent to traits1 == traits2
-set_equal(traits1, traits2)
-</code></pre>
-<h2 id="function-bindab-c"><em>function</em> bind(a,b)-&gt;c</h2>
-<p>Binds together GWAS Catalog objects of the same class. Note that bind() preserves duplicates whereas union() does not.</p>
-<h2 id="function-intersectab-c"><em>function</em> intersect(a,b)-&gt;c</h2>
-<p>Returns the data common to both A and B, with no repetitions</p>
-<h2 id="function-set_diffab-c"><em>function</em> set_diff(a,b)-&gt;c</h2>
-<p>returns the data in A that is not in B, with no repetitions</p>
-<h2 id="function-set_xorab-c"><em>function</em> set_xor(a,b)-&gt;c</h2>
-<p>returns the data of A and B that are not in their intersection (the symmetric difference), with no repetitions</p>
-<h2 id="function-unionab-c"><em>function</em> union(a,b)-&gt;c</h2>
-<p>returns the combined data from A and B with no repetitions</p>
-<h2 id="function-set_equalab-bool"><em>function</em> set_equal(a,b)-&gt;bool</h2>
-<p>Check if the raw data of a and b are equal</p>
+                <h1 id="utility">utility</h1>
+<h2 id="function-get_child_efoefo_id-str-interactive-bool-true-liststr"><em>function</em>  get_child_efo(efo_id: str, interactive: bool = True) -&gt; list[str]</h2>
+<p>Get all child terms of this trait in the EFO hierarchy</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../get_variants/" class="btn btn-neutral float-left" title="get_variants"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../utility/" class="btn btn-neutral float-right" title="utility">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../set_operation/" class="btn btn-neutral float-left" title="set_operation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -195,10 +145,8 @@ set_equal(traits1, traits2)
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../get_variants/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../set_operation/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../utility/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
