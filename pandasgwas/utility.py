@@ -1,7 +1,9 @@
+from typing import List
+
 from pandasgwas import client
 
 
-def get_child_efo(efo_id: str, interactive: bool = True) -> list[str]:
+def get_child_efo(efo_id: str, interactive: bool = True) -> List[str]:
     terms = client.get_child_efo('https://www.ebi.ac.uk/ols/api/ontologies/efo/descendants?id=%s' % efo_id,
                                  interactive=interactive)
     ids = []
