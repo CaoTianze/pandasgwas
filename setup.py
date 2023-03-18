@@ -29,6 +29,6 @@ setuptools.setup(
     license="MIT",
     keywords=['gwas', 'genomics', 'snp', 'bioinformatics','pandas'],
     package_data={
-        "": ["*.csv"]
+        "": ["*.csv","*.txt"]
     }
 )
