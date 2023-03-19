@@ -1,4 +1,4 @@
-from pandasgwas.summary_statistics import search, browser, download
+from pandasgwas.summary_statistics import search, browser, download, parse
 
 
 def test_search():
@@ -13,7 +13,13 @@ def test_browser():
 
 
 def test_download():
-    search_DF = search(PubMed_id='27918534', study_accession_id='GCST003966')
-    search_DF = search(EFO_trait_id='EFO_0009934')
+    search_DF = search(PubMed_id='20081858')
     download(search_DF)
     assert True
+
+
+def test_parse():
+    search_DF = search(PubMed_id='20081858')
+    download(search_DF)
+    df = parse(search_DF)
+    assert len(df) == 9845349

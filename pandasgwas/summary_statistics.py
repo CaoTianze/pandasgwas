@@ -1,17 +1,17 @@
 import os
+import random
 import re
 import sys
 import warnings
 import webbrowser
-import random
+
 import requests
 from requests.adapters import HTTPAdapter
+from pandas import DataFrame, read_csv, Series, read_table, concat
+from pandasgwas.client import ask_yes_no_question
 
 s = requests.Session()
 s.mount('https://', HTTPAdapter(max_retries=5))
-from pandas import DataFrame, read_csv, Series, read_table
-from pandasgwas.client import ask_yes_no_question
-
 
 def _applyDF(line):
     matchobj = re.match('\.(.*/)((.*)-(.*)-(.*).h.tsv.gz)', line)
@@ -46,14 +46,14 @@ def search(PubMed_id: str = None, study_accession_id: str = None, EFO_trait_id: 
     return filter_df
 
 
-def browser(searched_DF: DataFrame):
-    if len(searched_DF) > 5:
+def browser(search_DF: DataFrame):
+    if len(search_DF) > 5:
         answer = ask_yes_no_question(
             "You will have more than %s pages opened."
-            "\r\nDo you still want to proceed? (Yes or No)" % len(searched_DF))
+            "\r\nDo you still want to proceed? (Yes or No)" % len(search_DF))
         if answer == "NO":
             return
-    searched_DF['dir'].apply(lambda x: webbrowser.open_new_tab('https://' + host + x))
+    search_DF['dir'].apply(lambda x: webbrowser.open_new_tab('https://' + host + x))
 
 
 def download(search_DF: DataFrame):
@@ -62,6 +62,15 @@ def download(search_DF: DataFrame):
 
 def _download_FTP(ftp_dir: str, file_name: str):
     os.makedirs(home_path, exist_ok=True)
+    #import urllib3
+    #s.keep_alive = False
+    #s.verify = False
+    #urllib3.disable_warnings()
+    #proxies = {
+    #    'http': 'http://127.0.0.1:7890/',
+    #    'https': 'http://127.0.0.1:7890/'
+    #}
+    #with s.get('https://' + host + ftp_dir + file_name, proxies=proxies, stream=True) as r:
     with s.get('https://' + host + ftp_dir + file_name, stream=True) as r:
         r.raise_for_status()
         with open(home_path + os.sep + file_name, 'wb') as f:
@@ -72,5 +81,12 @@ def _download_FTP(ftp_dir: str, file_name: str):
     sys.stdout.write('%s downloaded in %s\n' % (file_name, home_path))
 
 
-def parse(searched_DF: DataFrame) -> DataFrame:
-    pass
+def parse(search_DF: DataFrame) -> DataFrame:
+    return concat(map(lambda x: read_table(home_path + os.sep + x,
+                                           usecols=['variant_id', 'p_value', 'chromosome', 'base_pair_location',
+                                                    'odds_ratio', 'ci_lower', 'ci_upper', 'beta', 'standard_error',
+                                                    'effect_allele', 'other_allele', 'effect_allele_frequency',
+                                                    'hm_variant_id', 'hm_odds_ratio', 'hm_ci_lower', 'hm_ci_upper',
+                                                    'hm_beta', 'hm_effect_allele', 'hm_other_allele',
+                                                    'hm_effect_allele_frequency', 'hm_code'], compression='gzip')
+                      , search_DF['file_name']), ignore_index=True)
