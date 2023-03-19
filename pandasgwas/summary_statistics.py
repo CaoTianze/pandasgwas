@@ -6,12 +6,14 @@ import warnings
 import webbrowser
 
 import requests
-from requests.adapters import HTTPAdapter
 from pandas import DataFrame, read_csv, Series, read_table, concat
+from requests.adapters import HTTPAdapter
+
 from pandasgwas.client import ask_yes_no_question
 
 s = requests.Session()
 s.mount('https://', HTTPAdapter(max_retries=5))
+
 
 def _applyDF(line):
     matchobj = re.match('\.(.*/)((.*)-(.*)-(.*).h.tsv.gz)', line)
@@ -62,15 +64,15 @@ def download(search_DF: DataFrame):
 
 def _download_FTP(ftp_dir: str, file_name: str):
     os.makedirs(home_path, exist_ok=True)
-    #import urllib3
-    #s.keep_alive = False
-    #s.verify = False
-    #urllib3.disable_warnings()
-    #proxies = {
+    # import urllib3
+    # s.keep_alive = False
+    # s.verify = False
+    # urllib3.disable_warnings()
+    # proxies = {
     #    'http': 'http://127.0.0.1:7890/',
     #    'https': 'http://127.0.0.1:7890/'
-    #}
-    #with s.get('https://' + host + ftp_dir + file_name, proxies=proxies, stream=True) as r:
+    # }
+    # with s.get('https://' + host + ftp_dir + file_name, proxies=proxies, stream=True) as r:
     with s.get('https://' + host + ftp_dir + file_name, stream=True) as r:
         r.raise_for_status()
         with open(home_path + os.sep + file_name, 'wb') as f:
@@ -82,11 +84,18 @@ def _download_FTP(ftp_dir: str, file_name: str):
 
 
 def parse(search_DF: DataFrame) -> DataFrame:
-    return concat(map(lambda x: read_table(home_path + os.sep + x,
-                                           usecols=['variant_id', 'p_value', 'chromosome', 'base_pair_location',
-                                                    'odds_ratio', 'ci_lower', 'ci_upper', 'beta', 'standard_error',
-                                                    'effect_allele', 'other_allele', 'effect_allele_frequency',
-                                                    'hm_variant_id', 'hm_odds_ratio', 'hm_ci_lower', 'hm_ci_upper',
-                                                    'hm_beta', 'hm_effect_allele', 'hm_other_allele',
-                                                    'hm_effect_allele_frequency', 'hm_code'], compression='gzip')
-                      , search_DF['file_name']), ignore_index=True)
+    def map_func(file_name, PubMed_id, study_accession_id, EFO_trait_id):
+        one_DF = read_table(home_path + os.sep + file_name,
+                            usecols=['variant_id', 'p_value', 'chromosome', 'base_pair_location',
+                                     'odds_ratio', 'ci_lower', 'ci_upper', 'beta', 'standard_error',
+                                     'effect_allele', 'other_allele', 'effect_allele_frequency',
+                                     'hm_variant_id', 'hm_odds_ratio', 'hm_ci_lower', 'hm_ci_upper',
+                                     'hm_beta', 'hm_effect_allele', 'hm_other_allele',
+                                     'hm_effect_allele_frequency', 'hm_code'], compression='gzip')
+        one_DF['PubMed_id'] = PubMed_id
+        one_DF['study_accession_id'] = study_accession_id
+        one_DF['EFO_trait_id'] = EFO_trait_id
+        return one_DF
+
+    return concat(map(map_func, search_DF['file_name'], search_DF['PubMed_id'], search_DF['study_accession_id'],
+                      search_DF['EFO_trait_id']), ignore_index=True)
