@@ -1,19 +1,4 @@
 # pandasGWAS: a Python package for easy retrieval of GWAS Catalog data
-## Dependencies
-python: 3.8  
-pandas: 1.4.3  
-requests: 2.28.1  
-progressbar2: 4.0.0
-## Documentation
-See [pandasGWAS Documentation](https://caotianze.github.io/pandasgwas/)
-## Licensing Information
-### Source Code
-MIT License
-### Data from NHGRI-EBI GWAS Catalog
-The NHGRI-EBI GWAS Catalog and all its contents are available under the general [Terms of Use for EMBL-EBI Services](https://www.ebi.ac.uk/about/terms-of-use). Summary statistics are made available under [CC0](https://creativecommons.org/publicdomain/zero/1.0/) unless [otherwise stated](https://www.ebi.ac.uk/gwas/docs/faq#faq-H7).
-## Development Environment
-OS: Windows10 Professional  
-IDE: PyCharm 2022.1 (Community Edition)
 ## Installation
 `pip install pandasgwas`
 ## Example
@@ -50,5 +35,36 @@ study4=get_studies(reported_trait="Retinal vascular caliber")
 study5=get_studies(reported_trait="Non-small cell lung cancer (survival)")
 all_studies=study1+study2+study3+study4+study5
 ```
+## Summary statistics
+>It’s important to note that the data available on the FTP and REST API out of sync. The FTP is updated nightly with any newly ingested data. Currently, we’re unable to release more data to the REST API as it’s undergoing a complete redevelopment to help us cope with the tremendous growth in summary statistics data.
+
+Due to the above description on the official website, pandasGWAS has established a programming interface to query summary statistics data based on FTP data.    
+An example to get started is as follows:
+```Python
+from pandasgwas.summary_statistics import search, browser, download, parse
+#Search the index based on PubMed_id, study_accession_id, and EFO_trait_id. The indexed results will be returned as a DataFrame.
+search_DF = search(PubMed_id='27918534', study_accession_id='GCST003966')
+#Based on the index results, view the data directory on the browser.
+browser(search_DF)
+#Based on index results, download summary statistics data in $Home/pandasgwas_home.
+download(search_DF)
+#Based on the index results, load the data from $Home/pandasgwas_home and convert it into a DataFrame. 
+df = parse(search_DF)
+```
+## Dependencies
+python: 3.8  
+pandas: 1.4.3  
+requests: 2.28.1  
+progressbar2: 4.0.0
+## Documentation
+See [pandasGWAS Documentation](https://caotianze.github.io/pandasgwas/)
+## Licensing information
+### Source code
+MIT License
+### Data from NHGRI-EBI GWAS Catalog
+The NHGRI-EBI GWAS Catalog and all its contents are available under the general [Terms of Use for EMBL-EBI Services](https://www.ebi.ac.uk/about/terms-of-use). Summary statistics are made available under [CC0](https://creativecommons.org/publicdomain/zero/1.0/) unless [otherwise stated](https://www.ebi.ac.uk/gwas/docs/faq#faq-H7).
+## Development environment
+OS: Windows10 Professional  
+IDE: PyCharm 2022.1 (Community Edition)
 ## Similar projects
 R package [gwasrapidd](https://github.com/ramiromagno/gwasrapidd) by Ramiro Magno
