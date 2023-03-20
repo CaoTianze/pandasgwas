@@ -76,11 +76,12 @@ def _download_FTP(ftp_dir: str, file_name: str):
     with s.get('https://' + host + ftp_dir + file_name, stream=True) as r:
         r.raise_for_status()
         with open(home_path + os.sep + file_name, 'wb') as f:
-            for chunk in r.iter_content(chunk_size=8192):
-                i = random.randint(1, 5)
-                sys.stdout.write(file_name + ' downloading' + '.' * i + '\r')
+            i=0
+            for chunk in r.iter_content(chunk_size=1024):
+                i += 1024
+                sys.stdout.write('%s downloading: %.2f MB\r' % (file_name,i/1024/1024))
                 f.write(chunk)
-    sys.stdout.write('%s downloaded in %s\n' % (file_name, home_path))
+        sys.stdout.write('%s(%.2f MB) downloaded in %s\n' % (file_name, i/1024/1024, home_path))
 
 
 def parse(search_DF: DataFrame) -> DataFrame:

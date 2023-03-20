@@ -19,3 +19,4 @@ from pandasgwas.get_variants import get_variants_by_study_id, get_variants_by_as
     get_variants_by_reported_trait, get_variants_all, get_variants
 from pandasgwas.set_operation import bind, intersect, set_diff, set_xor, union, set_equal
 from pandasgwas.utility import get_child_efo
+import pandasgwas.summary_statistics

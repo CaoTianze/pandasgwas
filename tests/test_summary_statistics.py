@@ -13,6 +13,8 @@ def test_browser():
 
 
 def test_download():
+    df=search(study_accession_id='GCST001198')
+    download(df)
     search_DF = search(PubMed_id='20081858')
     download(search_DF)
     assert True
