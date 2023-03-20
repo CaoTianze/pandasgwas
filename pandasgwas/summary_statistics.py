@@ -1,5 +1,4 @@
 import os
-import random
 import re
 import sys
 import warnings
@@ -104,6 +103,14 @@ def parse(search_DF: DataFrame) -> DataFrame:
         one_DF['study_accession_id'] = study_accession_id
         one_DF['EFO_trait_id'] = EFO_trait_id
         return one_DF
+
+    total = sum(map(lambda x: os.path.getsize(home_path + os.sep + x), search_DF['file_name'])) / 1024 / 1024 / 1024
+    if total > 1:
+        answer = ask_yes_no_question(
+            "You will load more than %.2f GB data."
+            "\r\nDo you still want to proceed? (Yes or No)" % total)
+        if answer == "NO":
+            return
 
     return concat(map(map_func, search_DF['file_name'], search_DF['PubMed_id'], search_DF['study_accession_id'],
                       search_DF['EFO_trait_id']), ignore_index=True)
