@@ -35,10 +35,17 @@ harmonised_df[['dir', 'file_name', 'PubMed_id', 'study_accession_id', 'EFO_trait
     _applyDF)
 
 
-def search(PubMed_id: str = None, study_accession_id: str = None, EFO_trait_id: str = None) -> DataFrame:
+def search(PubMed_id: str = None, study_accession_id: str = None, EFO_trait_id: str = None,
+           online_index: bool = False) -> DataFrame:
     if PubMed_id is None and study_accession_id is None and EFO_trait_id is None:
         warnings.warn('Since there are no input conditions, all index values will be returned.')
-    filter_df = harmonised_df.copy()
+    if online_index:
+        _download_FTP('/pub/databases/gwas/summary_statistics/', 'harmonised_list.txt')
+        filter_df = read_csv(home_path + os.sep + 'harmonised_list.txt', names=['raw'])
+        filter_df[['dir', 'file_name', 'PubMed_id', 'study_accession_id', 'EFO_trait_id']] = filter_df['raw'].apply(
+            _applyDF)
+    else:
+        filter_df = harmonised_df.copy()
     if PubMed_id is not None:
         filter_df = filter_df[filter_df['PubMed_id'] == PubMed_id]
     if study_accession_id is not None:
@@ -76,12 +83,12 @@ def _download_FTP(ftp_dir: str, file_name: str):
     with s.get('https://' + host + ftp_dir + file_name, stream=True) as r:
         r.raise_for_status()
         with open(home_path + os.sep + file_name, 'wb') as f:
-            i=0
+            i = 0
             for chunk in r.iter_content(chunk_size=1024):
                 i += 1024
-                sys.stdout.write('%s downloading: %.2f MB\r' % (file_name,i/1024/1024))
+                sys.stdout.write('%s downloading: %.2f MB\r' % (file_name, i / 1024 / 1024))
                 f.write(chunk)
-        sys.stdout.write('%s(%.2f MB) downloaded in %s\n' % (file_name, i/1024/1024, home_path))
+        sys.stdout.write('%s(%.2f MB) downloaded in %s\n' % (file_name, i / 1024 / 1024, home_path))
 
 
 def parse(search_DF: DataFrame) -> DataFrame:
