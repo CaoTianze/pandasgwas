@@ -51,11 +51,11 @@ def search(PubMed_id: str = None, study_accession_id: str = None, EFO_trait_id: 
         filter_df = filter_df[filter_df['study_accession_id'] == study_accession_id]
     if EFO_trait_id is not None:
         filter_df = filter_df[filter_df['EFO_trait_id'] == EFO_trait_id]
-    return filter_df
+    return filter_df.reset_index(drop=True)
 
 
-def browser(search_DF: DataFrame):
-    if len(search_DF) > 5:
+def browser(search_DF: DataFrame, interactive: bool = True):
+    if len(search_DF) > 5 and interactive:
         answer = ask_yes_no_question(
             "You will have more than %s pages opened."
             "\r\nDo you still want to proceed? (Yes or No)" % len(search_DF))
@@ -90,7 +90,7 @@ def _download_FTP(ftp_dir: str, file_name: str):
         sys.stdout.write('%s(%.2f MB) downloaded in %s\n' % (file_name, i / 1024 / 1024, home_path))
 
 
-def parse(search_DF: DataFrame) -> DataFrame:
+def parse(search_DF: DataFrame, interactive: bool = True) -> DataFrame:
     def map_func(file_name, PubMed_id, study_accession_id, EFO_trait_id):
         one_DF = read_table(home_path + os.sep + file_name,
                             usecols=['variant_id', 'p_value', 'chromosome', 'base_pair_location',
@@ -105,7 +105,7 @@ def parse(search_DF: DataFrame) -> DataFrame:
         return one_DF
 
     total = sum(map(lambda x: os.path.getsize(home_path + os.sep + x), search_DF['file_name'])) / 1024 / 1024 / 1024
-    if total > 1:
+    if total > 1 and interactive:
         answer = ask_yes_no_question(
             "You will load more than %.2f GB data."
             "\r\nDo you still want to proceed? (Yes or No)" % total)
