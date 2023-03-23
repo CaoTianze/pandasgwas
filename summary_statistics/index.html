@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>utility - pandasGWAS Documentation</title>
+    <title>summary_statistics - pandasGWAS Documentation</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "utility";
-        var mkdocs_page_input_path = "utility.md";
+        var mkdocs_page_name = "summary_statistics";
+        var mkdocs_page_input_path = "summary_statistics.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -84,16 +84,48 @@
                 <li class="toctree-l1"><a class="reference internal" href="../set_operation/">set_operation</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../summary_statistics/">summary_statistics</a>
-                </li>
-              </ul>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">utility</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">summary_statistics</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_child_efoefo_id-str-interactive-bool-true-liststr">function  get_child_efo(efo_id: str, interactive: bool = True) -&gt; list[str]</a>
+    <li class="toctree-l2"><a class="reference internal" href="#function-searchpubmed_id-optionalstr-none-study_accession_id-optionalstr-none-efo_trait_id-optionalstr-none-online_index-bool-false-dataframe">function search(PubMed_id: Optional[str] = None, study_accession_id: Optional[str] = None, EFO_trait_id: Optional[str] = None, online_index: bool = False) -&gt; DataFrame</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-pubmed_id">param PubMed_id</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#param-study_accession_id">param study_accession_id</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#param-efo_trait_id">param EFO_trait_id</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#param-online_index">param online_index</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-downloadsearch_df-dataframe">function download(search_DF: DataFrame)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-search_df">param search_DF</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-browsersearch_df-dataframe-interactive-bool-true">function browser(search_DF: DataFrame, interactive: bool = True)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-search_df_1">param search_DF</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#param-interactive">param interactive</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-parsesearch_df-dataframe-interactive-bool-true-dataframe">function parse(search_DF: DataFrame, interactive: bool = True) -&gt; DataFrame</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-search_df_2">param search_DF</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_1">param interactive</a>
+    </li>
+        </ul>
     </li>
     </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../utility/">utility</a>
                 </li>
               </ul>
       </div>
@@ -110,7 +142,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>utility</li>
+      <li>summary_statistics</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -119,14 +151,40 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="utility">utility</h1>
-<h2 id="function-get_child_efoefo_id-str-interactive-bool-true-liststr"><em>function</em>  get_child_efo(efo_id: str, interactive: bool = True) -&gt; list[str]</h2>
-<p>Get all child terms of this trait in the EFO hierarchy</p>
+                <h1 id="summary_statistics">summary_statistics</h1>
+<p>Functions for easy retrieval of summary statistics data based on FTP data.</p>
+<h2 id="function-searchpubmed_id-optionalstr-none-study_accession_id-optionalstr-none-efo_trait_id-optionalstr-none-online_index-bool-false-dataframe"><em>function</em> search(PubMed_id: Optional[str] = None, study_accession_id: Optional[str] = None, EFO_trait_id: Optional[str] = None, online_index: bool = False) -&gt; DataFrame</h2>
+<p>Search for where data is stored based on indexing and query criteria.</p>
+<h3 id="param-pubmed_id">param PubMed_id</h3>
+<p>ID of PubMed.</p>
+<h3 id="param-study_accession_id">param study_accession_id</h3>
+<p>ID of study accession.</p>
+<h3 id="param-efo_trait_id">param EFO_trait_id</h3>
+<p>ID of EFO trait.</p>
+<h3 id="param-online_index">param online_index</h3>
+<p>Whether to use an online index.</p>
+<h2 id="function-downloadsearch_df-dataframe"><em>function</em> download(search_DF: DataFrame)</h2>
+<p>Download FTP data to directory $HOME/pandas_home.</p>
+<h3 id="param-search_df">param search_DF</h3>
+<p>A DataFrame that stores the FTP storage location. Obtained from calling the search function.</p>
+<h2 id="function-browsersearch_df-dataframe-interactive-bool-true"><em>function</em> browser(search_DF: DataFrame, interactive: bool = True)</h2>
+<p>See where the data is stored in the browser.</p>
+<h3 id="param-search_df_1">param search_DF</h3>
+<p>A DataFrame that stores the FTP storage location. Obtained from calling the search function.</p>
+<h3 id="param-interactive">param interactive</h3>
+<p>Whether to make interactive prompts.</p>
+<h2 id="function-parsesearch_df-dataframe-interactive-bool-true-dataframe"><em>function</em> parse(search_DF: DataFrame, interactive: bool = True) -&gt; DataFrame</h2>
+<p>Resolves the specified data from the directory $HOME/pandas_home to a DataFrame.</p>
+<h3 id="param-search_df_2">param search_DF</h3>
+<p>A DataFrame that stores the FTP storage location. Obtained from calling the search function.</p>
+<h3 id="param-interactive_1">param interactive</h3>
+<p>Whether to make interactive prompts.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../summary_statistics/" class="btn btn-neutral float-left" title="summary_statistics"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../set_operation/" class="btn btn-neutral float-left" title="set_operation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../utility/" class="btn btn-neutral float-right" title="utility">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -149,8 +207,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../summary_statistics/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../set_operation/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../utility/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
