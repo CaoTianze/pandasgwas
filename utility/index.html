@@ -92,6 +92,12 @@
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">utility</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#function-get_child_efoefo_id-str-interactive-bool-true-liststr">function  get_child_efo(efo_id: str, interactive: bool = True) -&gt; list[str]</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#param-efo_id">param efo_id</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#param-interactive">param interactive</a>
+    </li>
+        </ul>
     </li>
     </ul>
                 </li>
@@ -122,6 +128,15 @@
                 <h1 id="utility">utility</h1>
 <h2 id="function-get_child_efoefo_id-str-interactive-bool-true-liststr"><em>function</em>  get_child_efo(efo_id: str, interactive: bool = True) -&gt; list[str]</h2>
 <p>Get all child terms of this trait in the EFO hierarchy</p>
+<pre><code class="language-Python">from pandasgwas import get_child_efo
+child_list1=get_child_efo('EFO_0004884')#['EFO_0009393']
+child_list2=get_child_efo('EFO_0005299')#[]
+child_list3=get_child_efo('EFO_0009640')#['EFO_0600083', 'EFO_0005606', 'EFO_0008346', 'EFO_0006953']
+</code></pre>
+<h3 id="param-efo_id">param efo_id</h3>
+<p>EFO identifiers</p>
+<h3 id="param-interactive">param interactive</h3>
+<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
               
             </div>
           </div><footer>
