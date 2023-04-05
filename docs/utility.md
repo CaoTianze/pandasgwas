@@ -11,3 +11,10 @@ child_list3=get_child_efo('EFO_0009640')#['EFO_0600083', 'EFO_0005606', 'EFO_000
 EFO identifiers
 ### param interactive
 Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.
+
+## *function*  is_API_available() -> bool
+Test if the API is available. If the return value is not True, it means that the API is not available.
+```Python
+from pandasgwas import is_API_available
+is_available = is_API_available()
+```

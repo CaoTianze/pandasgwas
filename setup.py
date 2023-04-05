@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pandasgwas",
-    version="0.99.15",
+    version="0.99.16",
     author="Cao Tianze",
     author_email="hnrcao@qq.com",
     description="A Python package for easy retrieval of GWAS Catalog data",
