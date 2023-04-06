@@ -24,7 +24,7 @@ ID of EFO trait.
 Whether to use an online index.
 
 ## *function* download(search_DF: DataFrame)
-Download FTP data to directory $HOME/pandas_home.
+Download FTP data to directory $HOME/pandasgwas_home.
 ### param search_DF
 A DataFrame that stores the FTP storage location. Obtained from calling the search function.
 
