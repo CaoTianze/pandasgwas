@@ -1,3 +1,5 @@
+import functools
+
 import requests
 import json
 import progressbar
@@ -9,8 +11,13 @@ s = requests.Session()
 s.mount('https://', HTTPAdapter(max_retries=5))
 
 
+@functools.lru_cache(maxsize=None)
+def cache_get(url):
+    return s.get(url)
+
+
 def get_studies(url: str, interactive: bool = True) -> List[Dict]:
-    r = s.get(url)
+    r = cache_get(url)
     if r.status_code == 200:
         parsed_data = json.loads(r.text, object_hook=remove_links)
         if parsed_data.get('_embedded') is not None:
@@ -30,7 +37,7 @@ def get_studies(url: str, interactive: bool = True) -> List[Dict]:
                     # print('http req:'+format_url)
 
                     bar.update(i)
-                    r = s.get(format_url)
+                    r = cache_get(format_url)
                     if r.status_code == 200:
                         study_list.extend(
                             json.loads(r.text, object_hook=remove_links).get('_embedded').get("studies"))
@@ -47,7 +54,7 @@ def get_studies(url: str, interactive: bool = True) -> List[Dict]:
 
 
 def get_SNPs(url: str, interactive: bool = True) -> List[Dict]:
-    r = s.get(url)
+    r = cache_get(url)
     if r.status_code == 200:
         parsed_data = json.loads(r.text, object_hook=remove_links)
         if parsed_data.get('_embedded') is not None:
@@ -66,7 +73,7 @@ def get_SNPs(url: str, interactive: bool = True) -> List[Dict]:
                         format_url = '%s&page=%d&size=20' % (url, i)
                     # print('http req:'+format_url)
                     bar.update(i)
-                    r = s.get(format_url)
+                    r = cache_get(format_url)
                     if r.status_code == 200:
                         variant_list.extend(
                             json.loads(r.text, object_hook=remove_links).get('_embedded').get(
@@ -84,7 +91,7 @@ def get_SNPs(url: str, interactive: bool = True) -> List[Dict]:
 
 
 def get_traits(url: str, interactive: bool = True) -> List[Dict]:
-    r = s.get(url)
+    r = cache_get(url)
     if r.status_code == 200:
         parsed_data = json.loads(r.text, object_hook=remove_links)
         if parsed_data.get('_embedded') is not None:
@@ -103,7 +110,7 @@ def get_traits(url: str, interactive: bool = True) -> List[Dict]:
                         format_url = '%s&page=%d&size=20' % (url, i)
                     # print('http req:'+format_url)
                     bar.update(i)
-                    r = s.get(format_url)
+                    r = cache_get(format_url)
                     if r.status_code == 200:
                         trait_list.extend(
                             json.loads(r.text, object_hook=remove_links).get('_embedded').get("efoTraits"))
@@ -120,7 +127,7 @@ def get_traits(url: str, interactive: bool = True) -> List[Dict]:
 
 
 def get_associations(url: str, interactive: bool = True) -> List[Dict]:
-    r = s.get(url)
+    r = cache_get(url)
     if r.status_code == 200:
         parsed_data = json.loads(r.text, object_hook=remove_links_get_id)
         if parsed_data.get('_embedded') is not None:
@@ -139,7 +146,7 @@ def get_associations(url: str, interactive: bool = True) -> List[Dict]:
                         format_url = '%s&page=%d&size=20' % (url, i)
                     # print('http req:'+format_url)
                     bar.update(i)
-                    r = s.get(format_url)
+                    r = cache_get(format_url)
                     if r.status_code == 200:
                         association_list.extend(
                             json.loads(r.text, object_hook=remove_links_get_id).get('_embedded').get(
@@ -182,7 +189,7 @@ def remove_links_get_id(d: dict):
 
 
 def get_child_efo(url: str, interactive: bool = True) -> List[Dict]:
-    r = s.get(url)
+    r = cache_get(url)
     if r.status_code == 200:
         parsed_data = json.loads(r.text, object_hook=remove_links)
         if parsed_data.get('_embedded') is not None:
@@ -202,7 +209,7 @@ def get_child_efo(url: str, interactive: bool = True) -> List[Dict]:
                     # print('http req:'+format_url)
 
                     bar.update(i)
-                    r = s.get(format_url)
+                    r = cache_get(format_url)
                     if r.status_code == 200:
                         terms.extend(
                             json.loads(r.text, object_hook=remove_links).get('_embedded').get("terms"))
