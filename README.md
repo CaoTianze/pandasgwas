@@ -1,6 +1,7 @@
 # pandasGWAS: a Python package for easy retrieval of GWAS Catalog data
 ## News
-Starting from V0.99.14, pandasgwas can retrieve the summary statistics of the GWAS Catalog.
+starting from V0.99.18, pandasGWAS can cache API requests in memory.
+Starting from V0.99.14, pandasGWAS can retrieve the summary statistics of the GWAS Catalog.
 ## Installation
 `pip install pandasgwas`
 ## Example

@@ -18,3 +18,5 @@ Test if the API is available. If the return value is not True, it means that the
 from pandasgwas import is_API_available
 is_available = is_API_available()
 ```
+## *function*  clear_cache() -> None
+Clear cache of API requests.

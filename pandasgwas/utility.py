@@ -25,3 +25,7 @@ def is_API_available() -> bool:
         return False
     except:
         return False
+
+
+def clear_cache():
+    client.cache_get.cache_clear()
