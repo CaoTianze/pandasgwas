@@ -1,6 +1,7 @@
 # pandasGWAS: a Python package for easy retrieval of GWAS Catalog data
 ## News
-starting from V0.99.18, pandasGWAS can cache API requests in memory.
+On 4 May 2023, the work has been published in BMC Genomics.    
+Starting from V0.99.18, pandasGWAS can cache API requests in memory.    
 Starting from V0.99.14, pandasGWAS can retrieve the summary statistics of the GWAS Catalog.
 ## Installation
 `pip install pandasgwas`
