@@ -56,7 +56,7 @@ download(search_DF)
 df = parse(search_DF)
 ```
 ## Dependencies
-python: 3.8  
+python: 3.10  
 pandas: 1.4.3  
 requests: 2.28.1  
 progressbar2: 4.0.0
