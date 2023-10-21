@@ -1,5 +1,8 @@
 # pandasGWAS: a Python package for easy retrieval of GWAS Catalog data
+## Cite this work
+Cao, T., Li, A. & Huang, Y. pandasGWAS: a Python package for easy retrieval of GWAS catalog data. BMC Genomics 24, 238 (2023). https://doi.org/10.1186/s12864-023-09340-2
 ## News
+Starting from V1.2.0, pandasGWAS upgraded the version supported by Python to 3.11.    
 On 4 May 2023, the work has been published in BMC Genomics.    
 Starting from V0.99.18, pandasGWAS can cache API requests in memory.    
 Starting from V0.99.14, pandasGWAS can retrieve the summary statistics of the GWAS Catalog.
@@ -29,7 +32,7 @@ variants.variants[['rsId', 'functionalClass']]
 # 3   rs3757318       intron_variant
 # 4  rs10771399   intergenic_variant
 ```
-Aggregate queried results using mathematical symbols
+Aggregate queried results using mathematical symbols. In addition to using the plus sign(+), the package can also use other symbols(-, &, |, ^) to perform corresponding set operations on data objects of the same type.
 ```Python
 from pandasgwas.get_studies import get_studies
 study1=get_studies(reported_trait='Suicide risk')
@@ -56,10 +59,10 @@ download(search_DF)
 df = parse(search_DF)
 ```
 ## Dependencies
-python: 3.10  
-pandas: 1.4.3  
-requests: 2.28.1  
-progressbar2: 4.0.0
+python: 3.11  
+pandas: 1.5.3  
+requests: 2.31.0  
+progressbar2: 4.2.0
 ## Documentation
 See [pandasGWAS Documentation](https://caotianze.github.io/pandasgwas/)
 ## Licensing information
