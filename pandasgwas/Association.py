@@ -14,6 +14,13 @@ class Association:
             data = []
         self.parse(data)
 
+    def __str__(self) -> str:
+        class_str='''Association has 6 DataFremes with hierarchical dependencies.\nassociations\n|\n -loci\n|\n -strongext_risk_alleles\n|\n -author_reported_genes\n    |\n     -ensembl_gene_ids\n    |\n     -entrez_gene_ids'''
+        return class_str
+    def __repr__(self) -> str:
+        return self.__str__()
+    
+
     def parse(self, data: list = None):
         if data is None:
             warnings.warn("Data is None, DataFrame will be empty")

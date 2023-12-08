@@ -14,6 +14,14 @@ class Variant:
             data = []
         self.parse(data)
 
+    def __str__(self) -> str:
+        class_str = '''Variant has 5 DataFremes with hierarchical dependencies.\nvariants\n|\n -locations\n|\n -genomic_contexts\n    |\n     -ensembl_gene_ids\n    |\n     -entrez_gene_ids\n'''
+        return class_str
+    
+    def __repr__(self) -> str:
+        return self.__str__()
+    
+
     def parse(self, data: list = None):
         if data is None:
             warnings.warn("Data is None, DataFrame will be empty")
