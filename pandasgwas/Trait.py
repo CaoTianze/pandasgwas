@@ -13,6 +13,13 @@ class Trait:
             data = []
         self.parse(data)
 
+    def __str__(self) -> str:
+        class_str='''Trait has 1 DataFremes with hierarchical dependencies.\nefo_traits'''
+        return class_str
+    def __repr__(self) -> str:
+        return self.__str__()
+    
+
     def __len__(self):
         return len(self.efo_traits)
 
