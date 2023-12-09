@@ -3,7 +3,6 @@
 Cao, T., Li, A. & Huang, Y. pandasGWAS: a Python package for easy retrieval of GWAS catalog data. BMC Genomics 24, 238 (2023). https://doi.org/10.1186/s12864-023-09340-2
 ## News
 Starting from V1.2.0, pandasGWAS upgraded the version supported by Python to 3.11.    
-On 4 May 2023, the work has been published in BMC Genomics.    
 Starting from V0.99.18, pandasGWAS can cache API requests in memory.    
 Starting from V0.99.14, pandasGWAS can retrieve the summary statistics of the GWAS Catalog.
 ## Installation

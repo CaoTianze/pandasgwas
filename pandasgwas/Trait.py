@@ -14,8 +14,9 @@ class Trait:
         self.parse(data)
 
     def __str__(self) -> str:
-        class_str='''Trait has 1 DataFremes with hierarchical dependencies.\nefo_traits'''
+        class_str='Trait has 1 DataFrames with hierarchical dependencies.\nefo_traits'
         return class_str
+
     def __repr__(self) -> str:
         return self.__str__()
     

@@ -15,7 +15,10 @@ class Study:
         self.parse(data)
 
     def __str__(self) -> str:
-        class_str = '''Study has 7 DataFremes with hierarchical dependencies.\nstudies\n|\n -platforms\n|\n -ancestries\n    |\n     -ancestral_groups\n    |\n     -countries_of_origin\n    |\n     -countries_recruitment\n|\n -geontyping_tcchnologies'''
+        class_str = (
+            'Study has 7 DataFrames with hierarchical dependencies.\nstudies\n|\n -platforms\n|\n -ancestries\n    '
+            '|\n     -ancestral_groups\n    |\n     -countries_of_origin\n    |\n     -countries_recruitment\n|\n '
+            '-geontyping_tcchnologies')
         return class_str
     
     def __repr__(self) -> str:

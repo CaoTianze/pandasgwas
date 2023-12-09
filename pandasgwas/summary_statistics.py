@@ -15,12 +15,12 @@ s.mount('https://', HTTPAdapter(max_retries=5))
 
 
 def _applyDF(line):
-    matchobj = re.match('\.(.*/)((.*)-(.*)-(.*).h.tsv.gz)', line)
+    matchobj = re.match('\\.(.*/)((.*)-(.*)-(.*).h.tsv.gz)', line)
     if matchobj is not None:
         return Series(
             data=['/pub/databases/gwas/summary_statistics' + matchobj.group(1), matchobj.group(2), matchobj.group(3),
                   matchobj.group(4), matchobj.group(5)])
-    matchobj = re.match('\.(.*/)((GCST[0-9]*).h.tsv.gz)', line)
+    matchobj = re.match('\\.(.*/)((GCST.*).h.tsv.gz)', line)
     return Series(
         data=['/pub/databases/gwas/summary_statistics' + matchobj.group(1), matchobj.group(2), None, matchobj.group(3),
               None])
@@ -69,7 +69,7 @@ def download(search_DF: DataFrame):
 
 
 def _download_FTP(ftp_dir: str, file_name: str):
-    os.makedirs(home_path, exist_ok=True)
+    # os.makedirs(home_path, exist_ok=True)
     # import urllib3
     # s.keep_alive = False
     # s.verify = False
@@ -79,7 +79,14 @@ def _download_FTP(ftp_dir: str, file_name: str):
     #    'https': 'http://127.0.0.1:7890/'
     # }
     # with s.get('https://' + host + ftp_dir + file_name, proxies=proxies, stream=True) as r:
-    with s.get('https://' + host + ftp_dir + file_name, stream=True) as r:
+    with s.get('https://' + host + ftp_dir + file_name, timeout=60, stream=True) as r:
+        online_size = r.headers.get('content-length', 0)
+        local_size = 0
+        if os.path.exists(home_path + os.sep + file_name):
+            local_size = os.path.getsize(home_path + os.sep + file_name)
+        if local_size > 0 and (int(online_size) == local_size):
+            sys.stdout.write('[SKIP]: %s has been downloaded in %s\n' % (file_name, home_path))
+            return
         r.raise_for_status()
         with open(home_path + os.sep + file_name, 'wb') as f:
             i = 0
@@ -87,7 +94,7 @@ def _download_FTP(ftp_dir: str, file_name: str):
                 i += 1024
                 sys.stdout.write('%s downloading: %.2f MB\r' % (file_name, i / 1024 / 1024))
                 f.write(chunk)
-        sys.stdout.write('%s(%.2f MB) downloaded in %s\n' % (file_name, i / 1024 / 1024, home_path))
+        sys.stdout.write('%s(%.2f MB) has been downloaded in %s\n' % (file_name, i / 1024 / 1024, home_path))
 
 
 def parse(search_DF: DataFrame, interactive: bool = True) -> DataFrame:
