@@ -51,59 +51,23 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">Browser</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#function-open_in_pubmedpubmed_id-str-bool">function open_in_pubmed(pubmed_id: str) -&gt; bool</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-pubmed_id">param pubmed_id</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.Browser.open_gene_in_gwas_catalog">open_gene_in_gwas_catalog</a>
     </li>
-        </ul>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.Browser.open_in_dbsnp">open_in_dbsnp</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-open_in_dbsnpvariant_id-str-bool">function open_in_dbsnp(variant_id: str) -&gt; bool</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-variant_id">param variant_id</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.Browser.open_in_gtex">open_in_gtex</a>
     </li>
-        </ul>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.Browser.open_in_pubmed">open_in_pubmed</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-open_in_gtexvariant_id-str-bool">function open_in_gtex(variant_id: str) -&gt; bool</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-variant_id_1">param variant_id</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.Browser.open_publication_in_gwas_catalog">open_publication_in_gwas_catalog</a>
     </li>
-        </ul>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.Browser.open_region_in_gwas_catalog">open_region_in_gwas_catalog</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-open_study_in_gwas_catalogstudy_id-str-bool">function open_study_in_gwas_catalog(study_id: str) -&gt; bool</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-study_id">param study_id</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.Browser.open_study_in_gwas_catalog">open_study_in_gwas_catalog</a>
     </li>
-        </ul>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.Browser.open_trait_in_gwas_catalog">open_trait_in_gwas_catalog</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-open_variant_in_gwas_catalogvariant_id-str-bool">function open_variant_in_gwas_catalog(variant_id: str) -&gt; bool</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-variant_id_2">param variant_id</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-open_trait_in_gwas_catalogefo_id-str-bool">function open_trait_in_gwas_catalog(efo_id: str) -&gt; bool</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-efo_id">param efo_id</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-open_gene_in_gwas_cataloggene_name-str-bool">function open_gene_in_gwas_catalog(gene_name: str) -&gt; bool</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-gene_name">param gene_name</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-open_region_in_gwas_catalogregion_name_or_location-str-bool">function open_region_in_gwas_catalog(region_name_or_location: str) -&gt; bool</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-region_name_or_location">param region_name_or_location</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-open_publication_in_gwas_catalogpubmed_id-str-bool">function open_publication_in_gwas_catalog(pubmed_id: str) -&gt; bool</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-pubmed_id_1">param pubmed_id</a>
-    </li>
-        </ul>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.Browser.open_variant_in_gwas_catalog">open_variant_in_gwas_catalog</a>
     </li>
     </ul>
                 </li>
@@ -137,7 +101,7 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../set_operation/">set_operation</a>
+                <li class="toctree-l1"><a class="reference internal" href="../set_operation/">Set operation</a>
                 </li>
               </ul>
               <ul>
@@ -171,74 +135,494 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="browser">Browser</h1>
-<p>A set of helper functions for accessing web links</p>
-<h2 id="function-open_in_pubmedpubmed_id-str-bool"><em>function</em> open_in_pubmed(pubmed_id: str) -&gt; bool</h2>
-<p>This function launches the web browser and opens a tab for PubMed citation</p>
-<pre><code class="language-Python">from pandasgwas.Browser import *
-open_in_pubmed('26301688')
-</code></pre>
-<h3 id="param-pubmed_id">param pubmed_id</h3>
-<p>A PubMed identifier</p>
-<h2 id="function-open_in_dbsnpvariant_id-str-bool"><em>function</em> open_in_dbsnp(variant_id: str) -&gt; bool</h2>
-<p>This function launches the web browser at dbSNP and opens a tab for SNP identifier</p>
-<pre><code class="language-Python">from pandasgwas.Browser import *
-open_in_dbsnp('rs56261590')
-</code></pre>
-<h3 id="param-variant_id">param variant_id</h3>
-<p>A variant(Single Nucleotide Polymorphism) identifier</p>
-<h2 id="function-open_in_gtexvariant_id-str-bool"><em>function</em> open_in_gtex(variant_id: str) -&gt; bool</h2>
-<p>This function launches the web browser at the GTEx Portal and opens a tab for SNP identifier.</p>
-<pre><code class="language-Python">from pandasgwas.Browser import *
-open_in_gtex('rs56261590')
-</code></pre>
-<h3 id="param-variant_id_1">param variant_id</h3>
-<p>A variant(Single Nucleotide Polymorphism) identifier</p>
-<h2 id="function-open_study_in_gwas_catalogstudy_id-str-bool"><em>function</em> open_study_in_gwas_catalog(study_id: str) -&gt; bool</h2>
-<p>Browse GWAS Catalog entitie Study from the GWAS Web Graphical User Interface</p>
-<pre><code class="language-Python">from pandasgwas.Browser import *
-open_study_in_gwas_catalog('GCST000016')
-</code></pre>
-<h3 id="param-study_id">param study_id</h3>
-<p>A Study identifier</p>
-<h2 id="function-open_variant_in_gwas_catalogvariant_id-str-bool"><em>function</em> open_variant_in_gwas_catalog(variant_id: str) -&gt; bool</h2>
-<p>Browse GWAS Catalog entitie Single Nucleotide Polymorphism from the GWAS Web Graphical User Interface</p>
-<pre><code class="language-Python">from pandasgwas.Browser import *
-open_variant_in_gwas_catalog('rs146992477')
-</code></pre>
-<h3 id="param-variant_id_2">param variant_id</h3>
-<p>A variant(Single Nucleotide Polymorphism) identifier</p>
-<h2 id="function-open_trait_in_gwas_catalogefo_id-str-bool"><em>function</em> open_trait_in_gwas_catalog(efo_id: str) -&gt; bool</h2>
-<p>Browse GWAS Catalog entitie Trait from the GWAS Web Graphical User Interface</p>
-<pre><code class="language-Python">from pandasgwas.Browser import *
-open_trait_in_gwas_catalog('EFO_0004884')
-</code></pre>
-<h3 id="param-efo_id">param efo_id</h3>
-<p>An EFO Trait identifier</p>
-<h2 id="function-open_gene_in_gwas_cataloggene_name-str-bool"><em>function</em> open_gene_in_gwas_catalog(gene_name: str) -&gt; bool</h2>
-<p>Browse GWAS Catalog entitie Gene from the GWAS Web Graphical User Interface</p>
+                <div class="doc doc-object doc-module">
+
+
+
+<h2 id="pandasgwas.Browser" class="doc doc-heading">
+          <span class="doc doc-object-name doc-module-name">pandasgwas.Browser</span>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+  
+      <p>A set of helper functions for accessing web links</p>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.Browser.open_gene_in_gwas_catalog" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">open_gene_in_gwas_catalog</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">open_gene_in_gwas_catalog</span><span class="p">(</span><span class="n">gene_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Browse GWAS Catalog entitie Gene from the GWAS Web Graphical User Interface</p>
 <pre><code class="language-Python">from pandasgwas.Browser import *
 open_gene_in_gwas_catalog('DPP6')
 </code></pre>
-<h3 id="param-gene_name">param gene_name</h3>
-<p>Gene name</p>
-<h2 id="function-open_region_in_gwas_catalogregion_name_or_location-str-bool"><em>function</em> open_region_in_gwas_catalog(region_name_or_location: str) -&gt; bool</h2>
-<p>Browse GWAS Catalog entitie Region from the GWAS Web Graphical User Interface</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>gene_name</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>Gene name</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>      <p>Returns:</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.Browser.open_in_dbsnp" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">open_in_dbsnp</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">open_in_dbsnp</span><span class="p">(</span><span class="n">variant_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>This function launches the web browser at dbSNP and opens a tab for SNP identifier</p>
+<pre><code class="language-Python">from pandasgwas.Browser import *
+open_in_dbsnp('rs56261590')
+</code></pre>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>variant_id</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>A variant(Single Nucleotide Polymorphism) identifier</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>      <p>Returns:</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.Browser.open_in_gtex" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">open_in_gtex</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">open_in_gtex</span><span class="p">(</span><span class="n">variant_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>This function launches the web browser at the GTEx Portal and opens a tab for SNP identifier.</p>
+<pre><code class="language-Python">from pandasgwas.Browser import *
+open_in_gtex('rs56261590')
+</code></pre>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>variant_id</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>A variant(Single Nucleotide Polymorphism) identifier</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>      <p>Returns:</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.Browser.open_in_pubmed" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">open_in_pubmed</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">open_in_pubmed</span><span class="p">(</span><span class="n">pubmed_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>This function launches the web browser and opens a tab for PubMed citation</p>
+<pre><code class="language-Python">from pandasgwas.Browser import *
+open_in_pubmed('26301688')
+</code></pre>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>pubmed_id</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>A PubMed identifier</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>      <p>Returns:</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.Browser.open_publication_in_gwas_catalog" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">open_publication_in_gwas_catalog</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">open_publication_in_gwas_catalog</span><span class="p">(</span><span class="n">pubmed_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Browse GWAS Catalog entitie Publication from the GWAS Web Graphical User Interface</p>
+<pre><code class="language-Python">from pandasgwas.Browser import *
+open_publication_in_gwas_catalog('25533513')
+</code></pre>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>pubmed_id</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>A PubMed identifier</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>      <p>Returns:</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.Browser.open_region_in_gwas_catalog" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">open_region_in_gwas_catalog</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">open_region_in_gwas_catalog</span><span class="p">(</span>
+    <span class="n">region_name_or_location</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Browse GWAS Catalog entitie Region from the GWAS Web Graphical User Interface</p>
 <pre><code class="language-Python">from pandasgwas.Browser import *
 #region_name
 open_region_in_gwas_catalog('2q37.1')
 #location
 open_region_in_gwas_catalog('chr2:230100001-234700000')
 </code></pre>
-<h3 id="param-region_name_or_location">param region_name_or_location</h3>
-<p>Region name or chromosome and base pair location on the reference genome</p>
-<h2 id="function-open_publication_in_gwas_catalogpubmed_id-str-bool"><em>function</em> open_publication_in_gwas_catalog(pubmed_id: str) -&gt; bool</h2>
-<p>Browse GWAS Catalog entitie Publication from the GWAS Web Graphical User Interface</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>region_name_or_location</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>Region name or chromosome and base pair location on the reference genome</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>      <p>Returns:</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.Browser.open_study_in_gwas_catalog" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">open_study_in_gwas_catalog</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">open_study_in_gwas_catalog</span><span class="p">(</span><span class="n">study_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Browse GWAS Catalog entitie Study from the GWAS Web Graphical User Interface</p>
 <pre><code class="language-Python">from pandasgwas.Browser import *
-open_publication_in_gwas_catalog('25533513')
+open_study_in_gwas_catalog('GCST000016')
 </code></pre>
-<h3 id="param-pubmed_id_1">param pubmed_id</h3>
-<p>A PubMed identifier</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>study_id</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>A Study identifier</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>      <p>Returns:</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.Browser.open_trait_in_gwas_catalog" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">open_trait_in_gwas_catalog</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">open_trait_in_gwas_catalog</span><span class="p">(</span><span class="n">efo_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Browse GWAS Catalog entitie Trait from the GWAS Web Graphical User Interface</p>
+<pre><code class="language-Python">from pandasgwas.Browser import *
+open_trait_in_gwas_catalog('EFO_0004884')
+</code></pre>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>efo_id</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>An EFO Trait identifier</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>      <p>Returns:</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.Browser.open_variant_in_gwas_catalog" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">open_variant_in_gwas_catalog</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">open_variant_in_gwas_catalog</span><span class="p">(</span><span class="n">variant_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Browse GWAS Catalog entitie Single Nucleotide Polymorphism from the GWAS Web Graphical User Interface</p>
+<pre><code class="language-Python">from pandasgwas.Browser import *
+open_variant_in_gwas_catalog('rs146992477')
+</code></pre>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>variant_id</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>A variant(Single Nucleotide Polymorphism) identifier</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>      <p>Returns:</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
               
             </div>
           </div><footer>

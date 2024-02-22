@@ -47,21 +47,7 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">Association</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#class-associationassociation">class Association.Association()</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#property-associations">property associations</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#property-loci">property loci</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#property-strongest_risk_alleles">property strongest_risk_alleles</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#property-author_reported_genes">property author_reported_genes</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#property-entrez_gene_ids">property entrez_gene_ids</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#property-ensembl_gene_ids">property ensembl_gene_ids</a>
-    </li>
-        </ul>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.Association.Association">Association</a>
     </li>
     </ul>
                 </li>
@@ -99,7 +85,7 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../set_operation/">set_operation</a>
+                <li class="toctree-l1"><a class="reference internal" href="../set_operation/">Set operation</a>
                 </li>
               </ul>
               <ul>
@@ -133,33 +119,139 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="association">Association</h1>
-<h2 id="class-associationassociation"><em>class</em> Association.Association()</h2>
-<p>Python class to represent a set of GWAS Catalog Association. For more information, see "<a href="https://www.ebi.ac.uk/gwas/rest/docs/api">GWAS CATALOG API Guide</a>"</p>
+                <div class="doc doc-object doc-module">
+
+
+
+<h2 id="pandasgwas.Association" class="doc doc-heading">
+          <span class="doc doc-object-name doc-module-name">pandasgwas.Association</span>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="pandasgwas.Association.Association" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">Association</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Python class to represent a set of GWAS Catalog Association. For more information, see "<a href="https://www.ebi.ac.uk/gwas/rest/docs/api">GWAS CATALOG API Guide</a>"</p>
 <pre><code class="language-Python"># get Association by study_id
 from pandasgwas.get_associations import get_associations
 
 associations = get_associations(study_id='GCST000854')
-
 </code></pre>
-<h3 id="property-associations"><em>property</em> associations</h3>
-<p>type: pandas.DataFrame<br />
-A DataFrame to represent all queried Associations from GWAS Catalog REST API</p>
-<h3 id="property-loci"><em>property</em> loci</h3>
-<p>type: pandas.DataFrame<br />
-A DataFrame to represent column loci from associations</p>
-<h3 id="property-strongest_risk_alleles"><em>property</em> strongest_risk_alleles</h3>
-<p>type: pandas.DataFrame<br />
-A DataFrame to represent column strongest_risk_alleles from loci</p>
-<h3 id="property-author_reported_genes"><em>property</em> author_reported_genes</h3>
-<p>type: pandas.DataFrame<br />
-A DataFrame to represent column author_reported_genes from loci</p>
-<h3 id="property-entrez_gene_ids"><em>property</em> entrez_gene_ids</h3>
-<p>type: pandas.DataFrame<br />
-A DataFrame to represent column entrez_gene_ids from author_reported_genes</p>
-<h3 id="property-ensembl_gene_ids"><em>property</em> ensembl_gene_ids</h3>
-<p>type: pandas.DataFrame<br />
-A DataFrame to represent column entrez_gene_ids from author_reported_genes</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Attributes:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>associations</code></b>
+              –
+              <div class="doc-md-description">
+                <p>pandas.DataFrame. A DataFrame to represent all queried Associations from GWAS Catalog REST API</p>
+              </div>
+            </li>
+            <li>
+              <b><code>loci</code></b>
+              –
+              <div class="doc-md-description">
+                <p>pandas.DataFrame. A DataFrame to represent column loci from associations</p>
+              </div>
+            </li>
+            <li>
+              <b><code>strongest_risk_alleles</code></b>
+              –
+              <div class="doc-md-description">
+                <p>pandas.DataFrame. A DataFrame to represent column strongest_risk_alleles from loci</p>
+              </div>
+            </li>
+            <li>
+              <b><code>author_reported_genes</code></b>
+              –
+              <div class="doc-md-description">
+                <p>pandas.DataFrame. A DataFrame to represent column author_reported_genes from loci</p>
+              </div>
+            </li>
+            <li>
+              <b><code>entrez_gene_ids</code></b>
+              –
+              <div class="doc-md-description">
+                <p>pandas.DataFrame. A DataFrame to represent column entrez_gene_ids from author_reported_genes</p>
+              </div>
+            </li>
+            <li>
+              <b><code>ensembl_gene_ids</code></b>
+              –
+              <div class="doc-md-description">
+                <p>pandas.DataFrame. A DataFrame to represent column entrez_gene_ids from author_reported_genes</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
               
             </div>
           </div><footer>
