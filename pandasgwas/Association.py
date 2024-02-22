@@ -9,6 +9,25 @@ set_option('display.precision', 3)
 
 
 class Association:
+    """
+    Python class to represent a set of GWAS Catalog Association. For more information, see "[GWAS CATALOG API Guide](https://www.ebi.ac.uk/gwas/rest/docs/api)"
+
+    ```Python
+    # get Association by study_id
+    from pandasgwas.get_associations import get_associations
+
+    associations = get_associations(study_id='GCST000854')
+    ```
+
+    Attributes:
+        associations: pandas.DataFrame. A DataFrame to represent all queried Associations from GWAS Catalog REST API
+        loci: pandas.DataFrame. A DataFrame to represent column loci from associations
+        strongest_risk_alleles: pandas.DataFrame. A DataFrame to represent column strongest_risk_alleles from loci
+        author_reported_genes: pandas.DataFrame. A DataFrame to represent column author_reported_genes from loci
+        entrez_gene_ids: pandas.DataFrame. A DataFrame to represent column entrez_gene_ids from author_reported_genes
+        ensembl_gene_ids: pandas.DataFrame. A DataFrame to represent column entrez_gene_ids from author_reported_genes
+
+    """
     def __init__(self, data: list = None):
         if data is None:
             data = []
