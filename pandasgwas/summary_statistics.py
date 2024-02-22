@@ -1,3 +1,17 @@
+"""
+Functions for easy retrieval of summary statistics data based on FTP data.
+```Python
+from pandasgwas import summary_statistics
+#Search the index based on PubMed_id, study_accession_id, and EFO_trait_id. The indexed results will be returned as a DataFrame.
+search_DF = summary_statistics.search(PubMed_id='27918534', study_accession_id='GCST003966')
+#Based on the index results, view the data directory on the browser.
+summary_statistics.browser(search_DF)
+#Based on index results, download summary statistics data in $Home/pandasgwas_home.
+summary_statistics.download(search_DF)
+#Based on the index results, load the data from $Home/pandasgwas_home and convert it into a DataFrame.
+df = summary_statistics.parse(search_DF)
+```
+"""
 import os
 import re
 import sys
@@ -36,6 +50,19 @@ harmonised_df[['dir', 'file_name', 'PubMed_id', 'study_accession_id', 'EFO_trait
 
 def search(PubMed_id: str = None, study_accession_id: str = None, EFO_trait_id: str = None,
            online_index: bool = False) -> DataFrame:
+    """
+    Search for where data is stored based on indexing and query criteria.
+
+    Args:
+        PubMed_id: ID of PubMed.
+        study_accession_id: ID of study accession.
+        EFO_trait_id: ID of EFO trait.
+        online_index: Whether to use an online index.
+
+    Returns:
+        A DataFrame that records where the data is stored.
+
+    """
     if PubMed_id is None and study_accession_id is None and EFO_trait_id is None:
         warnings.warn('Since there are no input conditions, all index values will be returned.')
     if online_index:
@@ -54,7 +81,17 @@ def search(PubMed_id: str = None, study_accession_id: str = None, EFO_trait_id: 
     return filter_df.reset_index(drop=True)
 
 
-def browser(search_DF: DataFrame, interactive: bool = True):
+def browser(search_DF: DataFrame, interactive: bool = True) -> None:
+    """
+    See where the data is stored in the browser.
+
+    Args:
+        search_DF: A DataFrame that stores the FTP storage location. Obtained from calling the search function.
+        interactive: Whether to make interactive prompts.
+
+    Returns:
+
+    """
     if len(search_DF) > 5 and interactive:
         answer = ask_yes_no_question(
             "You will have more than %s pages opened."
@@ -64,7 +101,16 @@ def browser(search_DF: DataFrame, interactive: bool = True):
     search_DF['dir'].apply(lambda x: webbrowser.open_new_tab('https://' + host + x))
 
 
-def download(search_DF: DataFrame):
+def download(search_DF: DataFrame) -> None:
+    """
+    Download FTP data to directory $HOME/pandasgwas_home.
+
+    Args:
+        search_DF: A DataFrame that stores the FTP storage location. Obtained from calling the search function.
+
+    Returns:
+
+    """
     list(map(lambda x, y: _download_FTP(x, y), search_DF['dir'], search_DF['file_name']))
 
 
@@ -98,6 +144,17 @@ def _download_FTP(ftp_dir: str, file_name: str):
 
 
 def parse(search_DF: DataFrame, interactive: bool = True) -> DataFrame:
+    """
+    Resolves the specified data from the directory $HOME/pandas_home to a DataFrame.
+
+    Args:
+        search_DF: A DataFrame that stores the FTP storage location. Obtained from calling the search function.
+        interactive: Whether to make interactive prompts.
+
+    Returns:
+        A DataFrame that records summary statistics.
+
+    """
     def map_func(file_name, PubMed_id, study_accession_id, EFO_trait_id):
         one_DF = read_table(home_path + os.sep + file_name,
                             usecols=['variant_id', 'p_value', 'chromosome', 'base_pair_location',

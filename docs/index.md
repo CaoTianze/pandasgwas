@@ -15,4 +15,4 @@ pandasGWAS: a Python package for easy retrieval of GWAS Catalog data
 * Study - Python class to represent a set of Studies
 * Trait - Python class to represent a set of EFO Traits
 * utility - A set of utility functions
-* summary_statistics - A set of functions for easy retrieval of summary statistics data based on FTP data
+* [summary_statistics][pandasgwas.summary_statistics] - A set of functions for easy retrieval of summary statistics data based on FTP data

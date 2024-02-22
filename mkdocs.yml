@@ -1,2 +1,13 @@
 site_name: pandasGWAS Documentation
 theme: readthedocs
+plugins:
+- search
+- mkdocstrings:
+    default_handler: python
+    handlers:
+      python:
+        options:
+          show_root_heading: True
+          show_source: False
+          separate_signature: true
+          show_signature_annotations: true
