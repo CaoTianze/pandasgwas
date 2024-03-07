@@ -45,10 +45,11 @@ def bind(a: Union[Association, Variant, Study, Trait],
     Binds together GWAS Catalog objects of the same class. Note that bind() preserves duplicates whereas union() does not.
 
     Args:
-        a:
-        b:
+        a: An object of the pandasGWAS custom class.
+        b: An object of the same type as a.
 
     Returns:
+        An object of the same type as a.
 
     """
     return a + b
@@ -61,10 +62,11 @@ def intersect(a: Union[Association, Variant, Study, Trait],
     Returns the data common to both A and B, with no repetitions
 
     Args:
-        a:
-        b:
+        a: An object of the pandasGWAS custom class.
+        b: An object of the same type as a.
 
     Returns:
+        An object of the same type as a.
 
     """
     return a & b
@@ -74,13 +76,14 @@ def set_diff(a: Union[Association, Variant, Study, Trait],
              b: Union[Association, Variant, Study, Trait]) -> Union[
     Association, Variant, Study, Trait]:
     """
-    returns the data in A that is not in B, with no repetitions
+    Returns the data in A that is not in B, with no repetitions
 
     Args:
-        a:
-        b:
+        a: An object of the pandasGWAS custom class.
+        b: An object of the same type as a.
 
     Returns:
+        An object of the same type as a.
 
     """
     return a - b
@@ -90,13 +93,14 @@ def set_xor(a: Union[Association, Variant, Study, Trait],
             b: Union[Association, Variant, Study, Trait]) -> Union[
     Association, Variant, Study, Trait]:
     """
-    returns the data of A and B that are not in their intersection (the symmetric difference), with no repetitions
+    Returns the data of A and B that are not in their intersection (the symmetric difference), with no repetitions
 
     Args:
-        a:
-        b:
+        a: An object of the pandasGWAS custom class.
+        b: An object of the same type as a.
 
     Returns:
+        An object of the same type as a.
 
     """
     return a ^ b
@@ -106,13 +110,14 @@ def union(a: Union[Association, Variant, Study, Trait],
           b: Union[Association, Variant, Study, Trait]) -> Union[
     Association, Variant, Study, Trait]:
     """
-    returns the combined data from A and B with no repetitions
+    Returns the combined data from A and B with no repetitions
 
     Args:
-        a:
-        b:
+        a: An object of the pandasGWAS custom class.
+        b: An object of the same type as a.
 
     Returns:
+        An object of the same type as a.
 
     """
     return a | b
@@ -124,10 +129,11 @@ def set_equal(a: Union[Association, Variant, Study, Trait],
     Check if the raw data of a and b are equal
 
     Args:
-        a:
-        b:
+        a: An object of the pandasGWAS custom class.
+        b: An object of the same type as a.
 
     Returns:
+        True or False.
 
     """
     return a == b

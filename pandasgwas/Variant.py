@@ -9,6 +9,23 @@ set_option('display.precision', 3)
 
 
 class Variant:
+    """
+    Python class to represent a set of GWAS Catalog Single Nucleotide Polymorphism. For more information, see "[GWAS CATALOG API Guide](https://www.ebi.ac.uk/gwas/rest/docs/api)"
+
+    ```Python
+    # get Single Nucleotide Polymorphism by study_id
+    from pandasgwas.get_variants import get_variants
+
+    snps = get_variants(study_id='GCST000854')
+    ```
+
+    Attributes:
+        single_nucleotide_polymorphisms: pandas.DataFrame. A DataFrame to represent all queried Single Nucleotide Polymorphisms from GWAS Catalog REST API
+        locations: pandas.DataFrame. A DataFrame to represent column locations from single_nucleotide_polymorphisms
+        genomic_contexts: pandas.DataFrame. A DataFrame to represent column genomicContexts from single_nucleotide_polymorphisms
+        ensembl_gene_ids: pandas.DataFrame. A DataFrame to represent column gene.ensemblGeneIds from genomic_contexts
+        entrez_gene_ids: pandas.DataFrame. A DataFrame to represent column gene.entrezGeneIds from genomic_contexts
+    """
     def __init__(self, data: list = None):
         if data is None:
             data = []

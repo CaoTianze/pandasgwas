@@ -9,6 +9,24 @@ set_option('display.precision', 3)
 
 
 class Study:
+    """
+    Python class to represent a set of GWAS Catalog Study. For more information, see "[GWAS CATALOG API Guide](https://www.ebi.ac.uk/gwas/rest/docs/api)"
+
+    ```Python
+    # get Study by study_id
+    from pandasgwas.get_studies import get_studies
+    studies = get_studies(study_id='GCST000854')
+    ```
+
+    Attributes:
+        studies: pandas.DataFrame. A DataFrame to represent all queried Studies from GWAS Catalog REST API
+        platforms:pandas.DataFrame. A DataFrame to represent column platforms from studies
+        ancestries:pandas.DataFrame. A DataFrame to represent column ancestries from studies
+        genotypingTechnologies: pandas.DataFrame. A DataFrame to represent column genotypingTechnologies from studies
+        ancestralGroups: pandas.DataFrame. A DataFrame to represent column ancestralGroups from ancestries
+        countriesOfOrigin:pandas.DataFrame. A DataFrame to represent column countriesOfOrigin from ancestries
+        countriesOfRecruitment: pandas.DataFrame. A DataFrame to represent column countriesOfOrigin from ancestries
+    """
     def __init__(self, data: list = None):
         if data is None:
             data = []
