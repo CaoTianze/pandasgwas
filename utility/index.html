@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>utility - pandasGWAS Documentation</title>
+    <title>Utility - pandasGWAS Documentation</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "utility";
+        var mkdocs_page_name = "Utility";
         var mkdocs_page_input_path = "utility.md";
         var mkdocs_page_url = null;
       </script>
@@ -65,19 +65,19 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../get_associations/">get_associations</a>
+                <li class="toctree-l1"><a class="reference internal" href="../get_associations/">Get associations</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../get_studies/">get_studies</a>
+                <li class="toctree-l1"><a class="reference internal" href="../get_studies/">Get studies</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../get_traits/">get_traits</a>
+                <li class="toctree-l1"><a class="reference internal" href="../get_traits/">Get traits</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../get_variants/">get_variants</a>
+                <li class="toctree-l1"><a class="reference internal" href="../get_variants/">Get variants</a>
                 </li>
               </ul>
               <ul>
@@ -89,19 +89,13 @@
                 </li>
               </ul>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">utility</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Utility</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_child_efoefo_id-str-interactive-bool-true-liststr">function  get_child_efo(efo_id: str, interactive: bool = True) -&gt; list[str]</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-efo_id">param efo_id</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.utility.clear_cache">clear_cache</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive">param interactive</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.utility.get_child_efo">get_child_efo</a>
     </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-is_api_available-bool">function  is_API_available() -&gt; bool</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-clear_cache-none">function  clear_cache() -&gt; None</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.utility.is_API_available">is_API_available</a>
     </li>
     </ul>
                 </li>
@@ -120,7 +114,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">utility</li>
+      <li class="breadcrumb-item active">Utility</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -129,25 +123,217 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="utility">utility</h1>
-<h2 id="function-get_child_efoefo_id-str-interactive-bool-true-liststr"><em>function</em>  get_child_efo(efo_id: str, interactive: bool = True) -&gt; list[str]</h2>
-<p>Get all child terms of this trait in the EFO hierarchy</p>
+                <div class="doc doc-object doc-module">
+
+
+
+<h2 id="pandasgwas.utility" class="doc doc-heading">
+          <span class="doc doc-object-name doc-module-name">pandasgwas.utility</span>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.utility.clear_cache" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">clear_cache</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">clear_cache</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Clear cache of API requests.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code>None</code>
+            –
+            <div class="doc-md-description">
+              <p>None</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.utility.get_child_efo" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get_child_efo</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">get_child_efo</span><span class="p">(</span>
+    <span class="n">efo_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">interactive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Get all child terms of this trait in the EFO hierarchy</p>
 <pre><code class="language-Python">from pandasgwas import get_child_efo
 child_list1=get_child_efo('EFO_0004884')#['EFO_0009393']
 child_list2=get_child_efo('EFO_0005299')#[]
 child_list3=get_child_efo('EFO_0009640')#['EFO_0600083', 'EFO_0005606', 'EFO_0008346', 'EFO_0006953']
 </code></pre>
-<h3 id="param-efo_id">param efo_id</h3>
-<p>EFO identifiers</p>
-<h3 id="param-interactive">param interactive</h3>
-<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-is_api_available-bool"><em>function</em>  is_API_available() -&gt; bool</h2>
-<p>Test if the API is available. If the return value is not True, it means that the API is not available.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>efo_id</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>EFO identifiers</p>
+              </div>
+            </li>
+            <li>
+              <b><code>interactive</code></b>
+                  (<code>bool</code>, default:
+                      <code>True</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code><span title="typing.List">List</span>[str]</code>
+            –
+            <div class="doc-md-description">
+              <p>EFO identifiers</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.utility.is_API_available" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">is_API_available</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">is_API_available</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Test if the API is available. If the return value is not True, it means that the API is not available.</p>
 <pre><code class="language-Python">from pandasgwas import is_API_available
 is_available = is_API_available()
 </code></pre>
-<h2 id="function-clear_cache-none"><em>function</em>  clear_cache() -&gt; None</h2>
-<p>Clear cache of API requests.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code>bool</code>
+            –
+            <div class="doc-md-description">
+              <p>True or False</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
               
             </div>
           </div><footer>

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>get_variants - pandasGWAS Documentation</title>
+    <title>Get variants - pandasGWAS Documentation</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "get_variants";
+        var mkdocs_page_name = "Get variants";
         var mkdocs_page_input_path = "get_variants.md";
         var mkdocs_page_url = null;
       </script>
@@ -65,111 +65,43 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../get_associations/">get_associations</a>
+                <li class="toctree-l1"><a class="reference internal" href="../get_associations/">Get associations</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../get_studies/">get_studies</a>
+                <li class="toctree-l1"><a class="reference internal" href="../get_studies/">Get studies</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../get_traits/">get_traits</a>
+                <li class="toctree-l1"><a class="reference internal" href="../get_traits/">Get traits</a>
                 </li>
               </ul>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">get_variants</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Get variants</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_study_idstudy_id-str-interactive-bool-true-variant">function get_variants_by_study_id(study_id: str, interactive: bool = True) -&gt; Variant</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-study_id">param study_id</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.get_variants.get_variants">get_variants</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive">param interactive</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.get_variants.get_variants_all">get_variants_all</a>
     </li>
-        </ul>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.get_variants.get_variants_by_association_id">get_variants_by_association_id</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_association_idassociation_id-str-interactive-bool-true-variant">function get_variants_by_association_id(association_id: str, interactive: bool = True) -&gt; Variant</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-association_id">param association_id</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.get_variants.get_variants_by_cytogenetic_band">get_variants_by_cytogenetic_band</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_1">param interactive</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.get_variants.get_variants_by_efo_id">get_variants_by_efo_id</a>
     </li>
-        </ul>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.get_variants.get_variants_by_efo_trait">get_variants_by_efo_trait</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_variant_idvariant_id-str-interactive-bool-true-variant">function get_variants_by_variant_id(variant_id: str, interactive: bool = True) -&gt; Variant</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-variant_id">param variant_id</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.get_variants.get_variants_by_gene_name">get_variants_by_gene_name</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_2">param interactive</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.get_variants.get_variants_by_genomic_range">get_variants_by_genomic_range</a>
     </li>
-        </ul>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.get_variants.get_variants_by_pubmed_id">get_variants_by_pubmed_id</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_efo_idefo_id-str-interactive-bool-true-variant">function get_variants_by_efo_id(efo_id: str, interactive: bool = True) -&gt; Variant</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-efo_id">param efo_id</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.get_variants.get_variants_by_reported_trait">get_variants_by_reported_trait</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_3">param interactive</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.get_variants.get_variants_by_study_id">get_variants_by_study_id</a>
     </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_pubmed_idpubmed_id-str-interactive-bool-true-variant">function get_variants_by_pubmed_id(pubmed_id: str, interactive: bool = True) -&gt; Variant</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-pubmed_id">param pubmed_id</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_4">param interactive</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_genomic_rangechromosome-str-start-int-end-int-interactive-bool-true-variant">function get_variants_by_genomic_range(chromosome: str, start: int, end: int, interactive: bool = True) -&gt; Variant</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-chromosome">param chromosome</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-start">param start</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-end">param end</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_5">param interactive</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_cytogenetic_bandcytogenetic_band-str-interactive-bool-true-variant">function get_variants_by_cytogenetic_band(cytogenetic_band: str, interactive: bool = True) -&gt; Variant</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-cytogenetic_band">param cytogenetic_band</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_6">param interactive</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_gene_namegene_name-str-interactive-bool-true-variant">function get_variants_by_gene_name(gene_name: str, interactive: bool = True) -&gt; Variant</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-gene_name">param gene_name</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_7">param interactive</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_efo_traitefo_trait-str-interactive-bool-true-variant">function get_variants_by_efo_trait(efo_trait: str, interactive: bool = True) -&gt; Variant</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-efo_trait">param efo_trait</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_8">param interactive</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_by_reported_traitreported_trait-str-interactive-bool-true-variant">function get_variants_by_reported_trait(reported_trait: str, interactive: bool = True) -&gt; Variant</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-reported_trait">param reported_trait</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_9">param interactive</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_variants_allinteractive-bool-true-variant">function get_variants_all(interactive: bool = True) -&gt; Variant</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_10">param interactive</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_variantsstudy_id-str-none-association_id-str-none-variant_id-str-none-efo_id-str-none-pubmed_id-str-none-genomic_range-listint-none-gene_name-str-none-efo_trait-str-none-reported_trait-str-none-set_operation-str-bind-interactive-bool-true-variant">function get_variants(study_id: str = None, association_id: str = None, variant_id: str = None, efo_id: str = None, pubmed_id: str = None, genomic_range: List[int] = None, gene_name: str = None, efo_trait: str = None, reported_trait: str = None, set_operation: str = 'bind', interactive: bool = True) -&gt; Variant</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.get_variants.get_variants_by_variant_id">get_variants_by_variant_id</a>
     </li>
     </ul>
                 </li>
@@ -183,7 +115,7 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../utility/">utility</a>
+                <li class="toctree-l1"><a class="reference internal" href="../utility/">Utility</a>
                 </li>
               </ul>
       </div>
@@ -200,7 +132,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">get_variants</li>
+      <li class="breadcrumb-item active">Get variants</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -209,127 +141,1173 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="get_variants">get_variants</h1>
-<p>Get Single Nucleotide Polymorphism function based on different search criteria</p>
-<h2 id="function-get_variants_by_study_idstudy_id-str-interactive-bool-true-variant"><em>function</em> get_variants_by_study_id(study_id: str, interactive: bool = True) -&gt; Variant</h2>
-<p>Get GWAS Catalog Single Nucleotide Polymorphisms by Study identifier</p>
-<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_study_id
+                <div class="doc doc-object doc-module">
 
-snps = get_variants_by_study_id('GCST000854')
-</code></pre>
-<h3 id="param-study_id">param study_id</h3>
-<p>Study identifier, accessionId in Study</p>
-<h3 id="param-interactive">param interactive</h3>
-<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_variants_by_association_idassociation_id-str-interactive-bool-true-variant"><em>function</em> get_variants_by_association_id(association_id: str, interactive: bool = True) -&gt; Variant</h2>
-<p>Get GWAS Catalog Single Nucleotide Polymorphisms by by their Association identifier</p>
-<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_association_id
 
-snps = get_variants_by_association_id('16603')
-</code></pre>
-<h3 id="param-association_id">param association_id</h3>
-<p>Association identifier, associationId in Association</p>
-<h3 id="param-interactive_1">param interactive</h3>
-<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_variants_by_variant_idvariant_id-str-interactive-bool-true-variant"><em>function</em> get_variants_by_variant_id(variant_id: str, interactive: bool = True) -&gt; Variant</h2>
-<p>Get GWAS Catalog Single Nucleotide Polymorphisms by Single Nucleotide Polymorphism identifier</p>
+
+<h2 id="pandasgwas.get_variants" class="doc doc-heading">
+          <span class="doc doc-object-name doc-module-name">pandasgwas.get_variants</span>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.get_variants.get_variants" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get_variants</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">get_variants</span><span class="p">(</span>
+    <span class="n">study_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">association_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">variant_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">efo_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">pubmed_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">genomic_range</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">gene_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">efo_trait</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">reported_trait</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">set_operation</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;bind&quot;</span><span class="p">,</span>
+    <span class="n">interactive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Variant</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Retrieves Single Nucleotide Polymorphisms via the NHGRI-EBI GWAS Catalog REST API. The REST API is queried multiple times with the criteria passed as arguments. By default all Single Nucleotide Polymorphisms that match the criteria supplied in the arguments are retrieved: this corresponds to the default set_operation set to 'bind', If you rather have only the Single Nucleotide Polymorphisms that match simultaneously all criteria provided, then set set_operation to 'intersection'.</p>
 <pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_variant_id
-
-snps = get_variants_by_variant_id('rs7744020')
+snps = get_variants(variant_id='rs7744020')
 </code></pre>
-<h3 id="param-variant_id">param variant_id</h3>
-<p>Single Nucleotide Polymorphism identifier, rsId in Single Nucleotide Polymorphism</p>
-<h3 id="param-interactive_2">param interactive</h3>
-<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_variants_by_efo_idefo_id-str-interactive-bool-true-variant"><em>function</em> get_variants_by_efo_id(efo_id: str, interactive: bool = True) -&gt; Variant</h2>
-<p>Get GWAS Catalog Single Nucleotide Polymorphisms by their EFO Trait identifier</p>
-<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_efo_id
 
-snps = get_variants_by_efo_id('EFO_0001065')
-</code></pre>
-<h3 id="param-efo_id">param efo_id</h3>
-<p>EFO Trait identifier, shortForm in EFO Trait</p>
-<h3 id="param-interactive_3">param interactive</h3>
-<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_variants_by_pubmed_idpubmed_id-str-interactive-bool-true-variant"><em>function</em> get_variants_by_pubmed_id(pubmed_id: str, interactive: bool = True) -&gt; Variant</h2>
-<p>Get GWAS Catalog Single Nucleotide Polymorphisms by PubMed identifiers</p>
-<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_pubmed_id
 
-snps = get_variants_by_pubmed_id('21041247')
-</code></pre>
-<h3 id="param-pubmed_id">param pubmed_id</h3>
-<p>PubMed identifier</p>
-<h3 id="param-interactive_4">param interactive</h3>
-<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_variants_by_genomic_rangechromosome-str-start-int-end-int-interactive-bool-true-variant"><em>function</em> get_variants_by_genomic_range(chromosome: str, start: int, end: int, interactive: bool = True) -&gt; Variant</h2>
-<p>Get GWAS Catalog Single Nucleotide Polymorphisms</p>
-<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_genomic_range
 
-snps = get_variants_by_genomic_range('1', 2300001, 5300000)
-</code></pre>
-<h3 id="param-chromosome">param chromosome</h3>
-<p>Human chromosome names: autosomal and sexual chromosomes only, i.e., 1--22, X and Y</p>
-<h3 id="param-start">param start</h3>
-<p>Start position of range (starts at 1).</p>
-<h3 id="param-end">param end</h3>
-<p>End position of range (inclusive).</p>
-<h3 id="param-interactive_5">param interactive</h3>
-<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_variants_by_cytogenetic_bandcytogenetic_band-str-interactive-bool-true-variant"><em>function</em> get_variants_by_cytogenetic_band(cytogenetic_band: str, interactive: bool = True) -&gt; Variant</h2>
-<p>Get GWAS Catalog Single Nucleotide Polymorphisms</p>
-<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_cytogenetic_band
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>study_id</code></b>
+                  (<code>str</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                
+              </div>
+            </li>
+            <li>
+              <b><code>association_id</code></b>
+                  (<code>str</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Association identifier, associationId in Association</p>
+              </div>
+            </li>
+            <li>
+              <b><code>variant_id</code></b>
+                  (<code>str</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Single Nucleotide Polymorphism identifier, rsId in Single Nucleotide Polymorphism</p>
+              </div>
+            </li>
+            <li>
+              <b><code>efo_id</code></b>
+                  (<code>str</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>EFO Trait identifier, shortForm in EFO Trait</p>
+              </div>
+            </li>
+            <li>
+              <b><code>pubmed_id</code></b>
+                  (<code>str</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>PubMed identifier</p>
+              </div>
+            </li>
+            <li>
+              <b><code>genomic_range</code></b>
+                  (<code><span title="typing.List">List</span>[int]</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>A List of three elements. These elements are: 'chromosome', 'start' and 'end' in function <a class="autorefs autorefs-internal" href="#pandasgwas.get_variants.get_variants_by_genomic_range">get_variants_by_genomic_range</a></p>
+              </div>
+            </li>
+            <li>
+              <b><code>gene_name</code></b>
+                  (<code>str</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Gene names</p>
+              </div>
+            </li>
+            <li>
+              <b><code>efo_trait</code></b>
+                  (<code>str</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Trait description</p>
+              </div>
+            </li>
+            <li>
+              <b><code>reported_trait</code></b>
+                  (<code>str</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Trait are reported by the original authors of the study</p>
+              </div>
+            </li>
+            <li>
+              <b><code>set_operation</code></b>
+                  (<code>str</code>, default:
+                      <code>&#39;bind&#39;</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>"bind" or "intersection"</p>
+              </div>
+            </li>
+            <li>
+              <b><code>interactive</code></b>
+                  (<code>bool</code>, default:
+                      <code>True</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-snps = get_variants_by_cytogenetic_band('1p36.32')
-</code></pre>
-<h3 id="param-cytogenetic_band">param cytogenetic_band</h3>
-<p>Cytogenetic bands of the form '1p36.11'</p>
-<h3 id="param-interactive_6">param interactive</h3>
-<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_variants_by_gene_namegene_name-str-interactive-bool-true-variant"><em>function</em> get_variants_by_gene_name(gene_name: str, interactive: bool = True) -&gt; Variant</h2>
-<p>Get GWAS Catalog Single Nucleotide Polymorphisms</p>
-<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_gene_name
 
-snps = get_variants_by_gene_name('KIAA0319')
-</code></pre>
-<h3 id="param-gene_name">param gene_name</h3>
-<p>Gene names</p>
-<h3 id="param-interactive_7">param interactive</h3>
-<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_variants_by_efo_traitefo_trait-str-interactive-bool-true-variant"><em>function</em> get_variants_by_efo_trait(efo_trait: str, interactive: bool = True) -&gt; Variant</h2>
-<p>Get GWAS Catalog Single Nucleotide Polymorphisms that match trait description</p>
-<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_efo_trait
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code><a class="autorefs autorefs-internal" title="pandasgwas.Variant.Variant" href="../Variant/#pandasgwas.Variant.Variant">Variant</a></code>
+            –
+            <div class="doc-md-description">
+              <p>A Variant object</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
 
-snps = get_variants_by_efo_trait('MHPG measurement')
-</code></pre>
-<h3 id="param-efo_trait">param efo_trait</h3>
-<p>Trait description</p>
-<h3 id="param-interactive_8">param interactive</h3>
-<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_variants_by_reported_traitreported_trait-str-interactive-bool-true-variant"><em>function</em> get_variants_by_reported_trait(reported_trait: str, interactive: bool = True) -&gt; Variant</h2>
-<p>Get GWAS Catalog Single Nucleotide Polymorphisms that match the reported traits, as reported by the original authors of the study.</p>
-<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_reported_trait
+</div>
 
-snps = get_variants_by_reported_trait(&quot;Dupuytren's disease&quot;)
-</code></pre>
-<h3 id="param-reported_trait">param reported_trait</h3>
-<p>Trait are reported by the original authors of the study</p>
-<h3 id="param-interactive_9">param interactive</h3>
-<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_variants_allinteractive-bool-true-variant"><em>function</em> get_variants_all(interactive: bool = True) -&gt; Variant</h2>
-<p>Get all Single Nucleotide Polymorphisms</p>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.get_variants.get_variants_all" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get_variants_all</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">get_variants_all</span><span class="p">(</span><span class="n">interactive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Variant</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Get all Single Nucleotide Polymorphisms</p>
 <pre><code class="language-Python">from pandasgwas.get_variants import get_variants_all
-
 snps = get_variants_all()
 </code></pre>
-<h3 id="param-interactive_10">param interactive</h3>
-<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_variantsstudy_id-str-none-association_id-str-none-variant_id-str-none-efo_id-str-none-pubmed_id-str-none-genomic_range-listint-none-gene_name-str-none-efo_trait-str-none-reported_trait-str-none-set_operation-str-bind-interactive-bool-true-variant"><em>function</em> get_variants(study_id: str = None, association_id: str = None, variant_id: str = None, efo_id: str = None, pubmed_id: str = None, genomic_range: List[int] = None, gene_name: str = None, efo_trait: str = None, reported_trait: str = None, set_operation: str = 'bind', interactive: bool = True) -&gt; Variant</h2>
-<p>Retrieves Single Nucleotide Polymorphisms via the NHGRI-EBI GWAS Catalog REST API. The REST API is queried multiple times with the criteria passed as arguments. By default all Single Nucleotide Polymorphisms that match the criteria supplied in the arguments are retrieved: this corresponds to the default set_operation set to 'bind', If you rather have only the Single Nucleotide Polymorphisms that match simultaneously all criteria provided, then set set_operation to 'intersection'.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>interactive</code></b>
+                  (<code>bool</code>, default:
+                      <code>True</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code><a class="autorefs autorefs-internal" title="pandasgwas.Variant.Variant" href="../Variant/#pandasgwas.Variant.Variant">Variant</a></code>
+            –
+            <div class="doc-md-description">
+              <p>A Variant object</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.get_variants.get_variants_by_association_id" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get_variants_by_association_id</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">get_variants_by_association_id</span><span class="p">(</span>
+    <span class="n">association_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">interactive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Variant</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Get GWAS Catalog Single Nucleotide Polymorphisms by by their Association identifier</p>
+<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_association_id
+snps = get_variants_by_association_id('16603')
+</code></pre>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>association_id</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>Association identifier, associationId in Association</p>
+              </div>
+            </li>
+            <li>
+              <b><code>interactive</code></b>
+                  (<code>bool</code>, default:
+                      <code>True</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code><a class="autorefs autorefs-internal" title="pandasgwas.Variant.Variant" href="../Variant/#pandasgwas.Variant.Variant">Variant</a></code>
+            –
+            <div class="doc-md-description">
+              <p>A Variant object</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.get_variants.get_variants_by_cytogenetic_band" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get_variants_by_cytogenetic_band</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">get_variants_by_cytogenetic_band</span><span class="p">(</span>
+    <span class="n">cytogenetic_band</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">interactive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Variant</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Get GWAS Catalog Single Nucleotide Polymorphisms by cytogenetic band.</p>
+<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_cytogenetic_band
+snps = get_variants_by_cytogenetic_band('1p36.32')
+</code></pre>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>cytogenetic_band</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>Cytogenetic bands of the form '1p36.11'</p>
+              </div>
+            </li>
+            <li>
+              <b><code>interactive</code></b>
+                  (<code>bool</code>, default:
+                      <code>True</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code><a class="autorefs autorefs-internal" title="pandasgwas.Variant.Variant" href="../Variant/#pandasgwas.Variant.Variant">Variant</a></code>
+            –
+            <div class="doc-md-description">
+              <p>A Variant object</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.get_variants.get_variants_by_efo_id" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get_variants_by_efo_id</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">get_variants_by_efo_id</span><span class="p">(</span>
+    <span class="n">efo_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">interactive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Variant</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Get GWAS Catalog Single Nucleotide Polymorphisms by their EFO Trait identifier</p>
+<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_efo_id
+snps = get_variants_by_efo_id('EFO_0001065')
+</code></pre>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>efo_id</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>EFO Trait identifier, shortForm in EFO Trait</p>
+              </div>
+            </li>
+            <li>
+              <b><code>interactive</code></b>
+                  (<code>bool</code>, default:
+                      <code>True</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code><a class="autorefs autorefs-internal" title="pandasgwas.Variant.Variant" href="../Variant/#pandasgwas.Variant.Variant">Variant</a></code>
+            –
+            <div class="doc-md-description">
+              <p>A Variant object</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.get_variants.get_variants_by_efo_trait" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get_variants_by_efo_trait</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">get_variants_by_efo_trait</span><span class="p">(</span>
+    <span class="n">efo_trait</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">interactive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Variant</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Get GWAS Catalog Single Nucleotide Polymorphisms that match trait description</p>
+<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_efo_trait
+snps = get_variants_by_efo_trait('MHPG measurement')
+</code></pre>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>efo_trait</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>Trait description</p>
+              </div>
+            </li>
+            <li>
+              <b><code>interactive</code></b>
+                  (<code>bool</code>, default:
+                      <code>True</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code><a class="autorefs autorefs-internal" title="pandasgwas.Variant.Variant" href="../Variant/#pandasgwas.Variant.Variant">Variant</a></code>
+            –
+            <div class="doc-md-description">
+              <p>A Variant object</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.get_variants.get_variants_by_gene_name" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get_variants_by_gene_name</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">get_variants_by_gene_name</span><span class="p">(</span>
+    <span class="n">gene_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">interactive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Variant</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Get GWAS Catalog Single Nucleotide Polymorphisms gene name</p>
+<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_gene_name
+snps = get_variants_by_gene_name('KIAA0319')
+</code></pre>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>gene_name</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>Gene names</p>
+              </div>
+            </li>
+            <li>
+              <b><code>interactive</code></b>
+                  (<code>bool</code>, default:
+                      <code>True</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code><a class="autorefs autorefs-internal" title="pandasgwas.Variant.Variant" href="../Variant/#pandasgwas.Variant.Variant">Variant</a></code>
+            –
+            <div class="doc-md-description">
+              <p>A Variant object</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.get_variants.get_variants_by_genomic_range" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get_variants_by_genomic_range</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">get_variants_by_genomic_range</span><span class="p">(</span>
+    <span class="n">chromosome</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">start</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">end</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">interactive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Variant</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Get GWAS Catalog Single Nucleotide Polymorphisms by genomic range</p>
+<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_genomic_range
+snps = get_variants_by_genomic_range('1', 2300001, 5300000)
+</code></pre>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>chromosome</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>Human chromosome names: autosomal and sexual chromosomes only, i.e., 1--22, X and Y</p>
+              </div>
+            </li>
+            <li>
+              <b><code>start</code></b>
+                  (<code>int</code>)
+              –
+              <div class="doc-md-description">
+                <p>Start position of range (starts at 1).</p>
+              </div>
+            </li>
+            <li>
+              <b><code>end</code></b>
+                  (<code>int</code>)
+              –
+              <div class="doc-md-description">
+                <p>End position of range (inclusive).</p>
+              </div>
+            </li>
+            <li>
+              <b><code>interactive</code></b>
+                  (<code>bool</code>, default:
+                      <code>True</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code><a class="autorefs autorefs-internal" title="pandasgwas.Variant.Variant" href="../Variant/#pandasgwas.Variant.Variant">Variant</a></code>
+            –
+            <div class="doc-md-description">
+              <p>A Variant object</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.get_variants.get_variants_by_pubmed_id" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get_variants_by_pubmed_id</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">get_variants_by_pubmed_id</span><span class="p">(</span>
+    <span class="n">pubmed_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">interactive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Variant</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Get GWAS Catalog Single Nucleotide Polymorphisms by PubMed identifiers</p>
+<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_pubmed_id
+snps = get_variants_by_pubmed_id('21041247')
+</code></pre>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>pubmed_id</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>PubMed identifier</p>
+              </div>
+            </li>
+            <li>
+              <b><code>interactive</code></b>
+                  (<code>bool</code>, default:
+                      <code>True</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code><a class="autorefs autorefs-internal" title="pandasgwas.Variant.Variant" href="../Variant/#pandasgwas.Variant.Variant">Variant</a></code>
+            –
+            <div class="doc-md-description">
+              <p>A Variant object</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.get_variants.get_variants_by_reported_trait" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get_variants_by_reported_trait</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">get_variants_by_reported_trait</span><span class="p">(</span>
+    <span class="n">reported_trait</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">interactive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Variant</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Get GWAS Catalog Single Nucleotide Polymorphisms that match the reported traits, as reported by the original authors of the study.</p>
+<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_reported_trait
+snps = get_variants_by_reported_trait(&quot;Dupuytren's disease&quot;)
+</code></pre>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>reported_trait</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>Trait are reported by the original authors of the study</p>
+              </div>
+            </li>
+            <li>
+              <b><code>interactive</code></b>
+                  (<code>bool</code>, default:
+                      <code>True</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code><a class="autorefs autorefs-internal" title="pandasgwas.Variant.Variant" href="../Variant/#pandasgwas.Variant.Variant">Variant</a></code>
+            –
+            <div class="doc-md-description">
+              <p>A Variant object</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.get_variants.get_variants_by_study_id" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get_variants_by_study_id</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">get_variants_by_study_id</span><span class="p">(</span>
+    <span class="n">study_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">interactive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Variant</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Get GWAS Catalog Single Nucleotide Polymorphisms by Study identifier</p>
+<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_study_id
+snps = get_variants_by_study_id('GCST000854')
+</code></pre>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>study_id</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>Study identifier, accessionId in Study</p>
+              </div>
+            </li>
+            <li>
+              <b><code>interactive</code></b>
+                  (<code>bool</code>, default:
+                      <code>True</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code><a class="autorefs autorefs-internal" title="pandasgwas.Variant.Variant" href="../Variant/#pandasgwas.Variant.Variant">Variant</a></code>
+            –
+            <div class="doc-md-description">
+              <p>A Variant object</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.get_variants.get_variants_by_variant_id" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get_variants_by_variant_id</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">get_variants_by_variant_id</span><span class="p">(</span>
+    <span class="n">variant_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">interactive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Variant</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Get GWAS Catalog Single Nucleotide Polymorphisms by Single Nucleotide Polymorphism identifier</p>
+<pre><code class="language-Python">from pandasgwas.get_variants import get_variants_by_variant_id
+snps = get_variants_by_variant_id('rs7744020')
+</code></pre>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>variant_id</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>Single Nucleotide Polymorphism identifier, rsId in Single Nucleotide Polymorphism</p>
+              </div>
+            </li>
+            <li>
+              <b><code>interactive</code></b>
+                  (<code>bool</code>, default:
+                      <code>True</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code><a class="autorefs autorefs-internal" title="pandasgwas.Variant.Variant" href="../Variant/#pandasgwas.Variant.Variant">Variant</a></code>
+            –
+            <div class="doc-md-description">
+              <p>A Variant object</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../get_traits/" class="btn btn-neutral float-left" title="get_traits"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../get_traits/" class="btn btn-neutral float-left" title="Get traits"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../set_operation/" class="btn btn-neutral float-right" title="Set operation">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 

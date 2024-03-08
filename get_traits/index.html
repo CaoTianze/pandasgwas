@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>get_traits - pandasGWAS Documentation</title>
+    <title>Get traits - pandasGWAS Documentation</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "get_traits";
+        var mkdocs_page_name = "Get traits";
         var mkdocs_page_input_path = "get_traits.md";
         var mkdocs_page_url = null;
       </script>
@@ -65,77 +65,37 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../get_associations/">get_associations</a>
+                <li class="toctree-l1"><a class="reference internal" href="../get_associations/">Get associations</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../get_studies/">get_studies</a>
+                <li class="toctree-l1"><a class="reference internal" href="../get_studies/">Get studies</a>
                 </li>
               </ul>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">get_traits</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Get traits</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_traits_by_study_idstudy_id-str-interactive-bool-true-trait">function get_traits_by_study_id(study_id: str, interactive: bool = True) -&gt; Trait</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-study_id">param study_id</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.get_traits.get_traits">get_traits</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive">param interactive</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.get_traits.get_traits_all">get_traits_all</a>
     </li>
-        </ul>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.get_traits.get_traits_by_association_id">get_traits_by_association_id</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_traits_by_association_idassociation_id-str-interactive-bool-true-trait">function get_traits_by_association_id(association_id: str, interactive: bool = True) -&gt; Trait</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-association_id">param association_id</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.get_traits.get_traits_by_efo_id">get_traits_by_efo_id</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_1">param interactive</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.get_traits.get_traits_by_efo_trait">get_traits_by_efo_trait</a>
     </li>
-        </ul>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.get_traits.get_traits_by_efo_uri">get_traits_by_efo_uri</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_traits_by_efo_idefo_id-str-interactive-bool-true-trait">function get_traits_by_efo_id(efo_id: str, interactive: bool = True) -&gt; Trait</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-efo_id">param efo_id</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.get_traits.get_traits_by_pubmed_id">get_traits_by_pubmed_id</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_2">param interactive</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_traits_by_pubmed_idpubmed_id-str-interactive-bool-true-trait">function get_traits_by_pubmed_id(pubmed_id: str, interactive: bool = True) -&gt; Trait</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-pubmed_id">param pubmed_id</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_3">param interactive</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_traits_by_efo_uriefo_uri-str-interactive-bool-true-trait">function get_traits_by_efo_uri(efo_uri: str, interactive: bool = True) -&gt; Trait</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-efo_uri">param efo_uri</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_4">param interactive</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_traits_by_efo_traitefo_trait-str-interactive-bool-true-trait">function get_traits_by_efo_trait(efo_trait: str, interactive: bool = True) -&gt; Trait</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-efo_trait">param efo_trait</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_5">param interactive</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_traits_allinteractive-bool-true-trait">function get_traits_all(interactive: bool = True) -&gt; Trait</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#param-interactive_6">param interactive</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#function-get_traitsstudy_id-str-none-association_id-str-none-efo_idnone-pubmed_id-str-noneefo_uri-str-none-efo_trait-str-none-set_operation-str-bindinteractive-bool-true-trait">function get_traits(study_id: str = None, association_id: str = None, efo_id=None, pubmed_id: str = None,efo_uri: str = None, efo_trait: str = None, set_operation: str = 'bind',interactive: bool = True) -&gt; Trait</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.get_traits.get_traits_by_study_id">get_traits_by_study_id</a>
     </li>
     </ul>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../get_variants/">get_variants</a>
+                <li class="toctree-l1"><a class="reference internal" href="../get_variants/">Get variants</a>
                 </li>
               </ul>
               <ul>
@@ -147,7 +107,7 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../utility/">utility</a>
+                <li class="toctree-l1"><a class="reference internal" href="../utility/">Utility</a>
                 </li>
               </ul>
       </div>
@@ -164,7 +124,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">get_traits</li>
+      <li class="breadcrumb-item active">Get traits</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -173,77 +133,788 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="get_traits">get_traits</h1>
-<p>Get EFO Trait function based on different search criteria</p>
-<h2 id="function-get_traits_by_study_idstudy_id-str-interactive-bool-true-trait"><em>function</em> get_traits_by_study_id(study_id: str, interactive: bool = True) -&gt; Trait</h2>
-<p>Get GWAS Catalog EFO Traits by Study identifier</p>
-<pre><code class="language-Python">from pandasgwas.get_traits import get_traits_by_study_id
-traits = get_traits_by_study_id('GCST000854') 
-</code></pre>
-<h3 id="param-study_id">param study_id</h3>
-<p>Study identifier, accessionId in Study</p>
-<h3 id="param-interactive">param interactive</h3>
-<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_traits_by_association_idassociation_id-str-interactive-bool-true-trait"><em>function</em> get_traits_by_association_id(association_id: str, interactive: bool = True) -&gt; Trait</h2>
-<p>Get GWAS Catalog EFO Traits by their Association identifier</p>
-<pre><code class="language-Python">from pandasgwas.get_traits import get_traits_by_association_id
-traits = get_traits_by_association_id('16603') 
-</code></pre>
-<h3 id="param-association_id">param association_id</h3>
-<p>Association identifier, associationId in Association</p>
-<h3 id="param-interactive_1">param interactive</h3>
-<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_traits_by_efo_idefo_id-str-interactive-bool-true-trait"><em>function</em> get_traits_by_efo_id(efo_id: str, interactive: bool = True) -&gt; Trait</h2>
-<p>Get GWAS Catalog EFO Traits by their EFO Trait identifier</p>
+                <div class="doc doc-object doc-module">
+
+
+
+<h2 id="pandasgwas.get_traits" class="doc doc-heading">
+          <span class="doc doc-object-name doc-module-name">pandasgwas.get_traits</span>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.get_traits.get_traits" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get_traits</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">get_traits</span><span class="p">(</span>
+    <span class="n">study_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">association_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">efo_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">pubmed_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">efo_uri</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">efo_trait</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">set_operation</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;bind&quot;</span><span class="p">,</span>
+    <span class="n">interactive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Trait</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Retrieves EFO Traits via the NHGRI-EBI GWAS Catalog REST API. The REST API is queried multiple times with the criteria passed as arguments. By default all EFO Traits that match the criteria supplied in the arguments are retrieved: this corresponds to the default set_operation set to 'bind', If you rather have only the EFO Traits that match simultaneously all criteria provided, then set set_operation to 'intersection'.</p>
 <pre><code class="language-Python">from pandasgwas.get_traits import get_traits_by_efo_id
-traits = get_traits_by_efo_id('EFO_0001065') 
+traits = get_traits(efo_id='EFO_0001065')
+
 </code></pre>
-<h3 id="param-efo_id">param efo_id</h3>
-<p>EFO Trait identifier, shortForm in EFO Trait</p>
-<h3 id="param-interactive_2">param interactive</h3>
-<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_traits_by_pubmed_idpubmed_id-str-interactive-bool-true-trait"><em>function</em> get_traits_by_pubmed_id(pubmed_id: str, interactive: bool = True) -&gt; Trait</h2>
-<p>Get GWAS Catalog EFO Traits by PubMed identifiers</p>
-<pre><code class="language-Python">from pandasgwas.get_traits import get_traits_by_pubmed_id
-traits = get_traits_by_pubmed_id('21041247') 
-</code></pre>
-<h3 id="param-pubmed_id">param pubmed_id</h3>
-<p>PubMed identifier</p>
-<h3 id="param-interactive_3">param interactive</h3>
-<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_traits_by_efo_uriefo_uri-str-interactive-bool-true-trait"><em>function</em> get_traits_by_efo_uri(efo_uri: str, interactive: bool = True) -&gt; Trait</h2>
-<p>Get GWAS Catalog EFO Traits by EFO URI</p>
-<pre><code class="language-Python">from pandasgwas.get_traits import get_traits_by_efo_uri
-traits = get_traits_by_efo_uri('http://www.ebi.ac.uk/efo/EFO_0005133') 
-</code></pre>
-<h3 id="param-efo_uri">param efo_uri</h3>
-<p>EFO URI</p>
-<h3 id="param-interactive_4">param interactive</h3>
-<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_traits_by_efo_traitefo_trait-str-interactive-bool-true-trait"><em>function</em> get_traits_by_efo_trait(efo_trait: str, interactive: bool = True) -&gt; Trait</h2>
-<p>Get GWAS Catalog EFO Traits that match trait description</p>
-<pre><code class="language-Python">from pandasgwas.get_traits import get_traits_by_efo_trait
-traits = get_traits_by_efo_trait('MHPG measurement')
-</code></pre>
-<h3 id="param-efo_trait">param efo_trait</h3>
-<p>Trait description</p>
-<h3 id="param-interactive_5">param interactive</h3>
-<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download. </p>
-<h2 id="function-get_traits_allinteractive-bool-true-trait"><em>function</em> get_traits_all(interactive: bool = True) -&gt; Trait</h2>
-<p>Gets all EFO Trats</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>study_id</code></b>
+                  (<code>str</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Study identifier, accessionId in Study</p>
+              </div>
+            </li>
+            <li>
+              <b><code>association_id</code></b>
+                  (<code>str</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Association identifier, associationId in Association</p>
+              </div>
+            </li>
+            <li>
+              <b><code>efo_id</code></b>
+                  (<code>str</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>EFO Trait identifier, shortForm in EFO Trait</p>
+              </div>
+            </li>
+            <li>
+              <b><code>pubmed_id</code></b>
+                  (<code>str</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>PubMed identifier</p>
+              </div>
+            </li>
+            <li>
+              <b><code>efo_uri</code></b>
+                  (<code>str</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>EFO URI</p>
+              </div>
+            </li>
+            <li>
+              <b><code>efo_trait</code></b>
+                  (<code>str</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Trait description</p>
+              </div>
+            </li>
+            <li>
+              <b><code>set_operation</code></b>
+                  (<code>str</code>, default:
+                      <code>&#39;bind&#39;</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>"bind" or "intersection"</p>
+              </div>
+            </li>
+            <li>
+              <b><code>interactive</code></b>
+                  (<code>bool</code>, default:
+                      <code>True</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code><a class="autorefs autorefs-internal" title="pandasgwas.Trait.Trait" href="../Trait/#pandasgwas.Trait.Trait">Trait</a></code>
+            –
+            <div class="doc-md-description">
+              <p>A Trait object</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.get_traits.get_traits_all" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get_traits_all</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">get_traits_all</span><span class="p">(</span><span class="n">interactive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Trait</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Gets all EFO Trats</p>
 <pre><code class="language-Python">from pandasgwas.get_traits import get_traits_all
 traits = get_traits_all()
+
 </code></pre>
-<h3 id="param-interactive_6">param interactive</h3>
-<p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
-<h2 id="function-get_traitsstudy_id-str-none-association_id-str-none-efo_idnone-pubmed_id-str-noneefo_uri-str-none-efo_trait-str-none-set_operation-str-bindinteractive-bool-true-trait"><em>function</em> get_traits(study_id: str = None, association_id: str = None, efo_id=None, pubmed_id: str = None,efo_uri: str = None, efo_trait: str = None, set_operation: str = 'bind',interactive: bool = True) -&gt; Trait</h2>
-<p>Retrieves EFO Traits via the NHGRI-EBI GWAS Catalog REST API. The REST API is queried multiple times with the criteria passed as arguments. By default all EFO Traits that match the criteria supplied in the arguments are retrieved: this corresponds to the default set_operation set to 'bind', If you rather have only the EFO Traits that match simultaneously all criteria provided, then set set_operation to 'intersection'.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>interactive</code></b>
+                  (<code>bool</code>, default:
+                      <code>True</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code><a class="autorefs autorefs-internal" title="pandasgwas.Trait.Trait" href="../Trait/#pandasgwas.Trait.Trait">Trait</a></code>
+            –
+            <div class="doc-md-description">
+              <p>A Trait object</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.get_traits.get_traits_by_association_id" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get_traits_by_association_id</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">get_traits_by_association_id</span><span class="p">(</span>
+    <span class="n">association_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">interactive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Trait</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Get GWAS Catalog EFO Traits by their Association identifier</p>
+<pre><code class="language-Python">from pandasgwas.get_traits import get_traits_by_association_id
+traits = get_traits_by_association_id('16603')
+
+</code></pre>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>association_id</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>Association identifier, associationId in Association</p>
+              </div>
+            </li>
+            <li>
+              <b><code>interactive</code></b>
+                  (<code>bool</code>, default:
+                      <code>True</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code><a class="autorefs autorefs-internal" title="pandasgwas.Trait.Trait" href="../Trait/#pandasgwas.Trait.Trait">Trait</a></code>
+            –
+            <div class="doc-md-description">
+              <p>A Trait object</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.get_traits.get_traits_by_efo_id" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get_traits_by_efo_id</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">get_traits_by_efo_id</span><span class="p">(</span>
+    <span class="n">efo_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">interactive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Trait</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Get GWAS Catalog EFO Traits by their EFO Trait identifier</p>
+<pre><code class="language-Python">from pandasgwas.get_traits import get_traits_by_efo_id
+traits = get_traits_by_efo_id('EFO_0001065')
+
+</code></pre>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>efo_id</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>EFO Trait identifier, shortForm in EFO Trait</p>
+              </div>
+            </li>
+            <li>
+              <b><code>interactive</code></b>
+                  (<code>bool</code>, default:
+                      <code>True</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code><a class="autorefs autorefs-internal" title="pandasgwas.Trait.Trait" href="../Trait/#pandasgwas.Trait.Trait">Trait</a></code>
+            –
+            <div class="doc-md-description">
+              <p>A Trait object</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.get_traits.get_traits_by_efo_trait" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get_traits_by_efo_trait</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">get_traits_by_efo_trait</span><span class="p">(</span>
+    <span class="n">efo_trait</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">interactive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Trait</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Get GWAS Catalog EFO Traits that match trait description</p>
+<pre><code class="language-Python">from pandasgwas.get_traits import get_traits_by_efo_trait
+traits = get_traits_by_efo_trait('MHPG measurement')
+
+</code></pre>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>efo_trait</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>Trait description</p>
+              </div>
+            </li>
+            <li>
+              <b><code>interactive</code></b>
+                  (<code>bool</code>, default:
+                      <code>True</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code><a class="autorefs autorefs-internal" title="pandasgwas.Trait.Trait" href="../Trait/#pandasgwas.Trait.Trait">Trait</a></code>
+            –
+            <div class="doc-md-description">
+              <p>A Trait object</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.get_traits.get_traits_by_efo_uri" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get_traits_by_efo_uri</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">get_traits_by_efo_uri</span><span class="p">(</span>
+    <span class="n">efo_uri</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">interactive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Trait</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Get GWAS Catalog EFO Traits by EFO URI</p>
+<pre><code class="language-Python">from pandasgwas.get_traits import get_traits_by_efo_uri
+traits = get_traits_by_efo_uri('http://www.ebi.ac.uk/efo/EFO_0005133')
+
+</code></pre>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>efo_uri</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>EFO URI</p>
+              </div>
+            </li>
+            <li>
+              <b><code>interactive</code></b>
+                  (<code>bool</code>, default:
+                      <code>True</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code><a class="autorefs autorefs-internal" title="pandasgwas.Trait.Trait" href="../Trait/#pandasgwas.Trait.Trait">Trait</a></code>
+            –
+            <div class="doc-md-description">
+              <p>A Trait object</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.get_traits.get_traits_by_pubmed_id" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get_traits_by_pubmed_id</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">get_traits_by_pubmed_id</span><span class="p">(</span>
+    <span class="n">pubmed_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">interactive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Trait</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Get GWAS Catalog EFO Traits by PubMed identifiers</p>
+<pre><code class="language-Python">from pandasgwas.get_traits import get_traits_by_pubmed_id
+traits = get_traits_by_pubmed_id('21041247')
+
+</code></pre>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>pubmed_id</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>PubMed identifier</p>
+              </div>
+            </li>
+            <li>
+              <b><code>interactive</code></b>
+                  (<code>bool</code>, default:
+                      <code>True</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code><a class="autorefs autorefs-internal" title="pandasgwas.Trait.Trait" href="../Trait/#pandasgwas.Trait.Trait">Trait</a></code>
+            –
+            <div class="doc-md-description">
+              <p>A Trait object</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pandasgwas.get_traits.get_traits_by_study_id" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get_traits_by_study_id</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">get_traits_by_study_id</span><span class="p">(</span>
+    <span class="n">study_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">interactive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Trait</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <pre><code class="language-Python">from pandasgwas.get_traits import get_traits_by_study_id
+traits = get_traits_by_study_id('GCST000854')
+</code></pre>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>study_id</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>Study identifier, accessionId in Study</p>
+              </div>
+            </li>
+            <li>
+              <b><code>interactive</code></b>
+                  (<code>bool</code>, default:
+                      <code>True</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Indicates whether to run in interactive mode, when the value is True and the query data is divided into many pages, the function will prompt whether to continue the download.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code><a class="autorefs autorefs-internal" title="pandasgwas.Trait.Trait" href="../Trait/#pandasgwas.Trait.Trait">Trait</a></code>
+            –
+            <div class="doc-md-description">
+              <p>A Trait object</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../get_studies/" class="btn btn-neutral float-left" title="get_studies"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../get_variants/" class="btn btn-neutral float-right" title="get_variants">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../get_studies/" class="btn btn-neutral float-left" title="Get studies"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../get_variants/" class="btn btn-neutral float-right" title="Get variants">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>

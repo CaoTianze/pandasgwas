@@ -43,7 +43,13 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href=".">pandasGWAS Documentation</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#modules">Modules</a>
+    <li class="toctree-l2"><a class="reference internal" href="#functions-to-get-gwas-catlog-data">Functions to get GWAS Catlog data</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#functions-for-set-operation">Functions for set operation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#other-functions">Other functions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a>
     </li>
     </ul>
                 </li>
@@ -69,19 +75,19 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="get_associations/">get_associations</a>
+                <li class="toctree-l1"><a class="reference internal" href="get_associations/">Get associations</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="get_studies/">get_studies</a>
+                <li class="toctree-l1"><a class="reference internal" href="get_studies/">Get studies</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="get_traits/">get_traits</a>
+                <li class="toctree-l1"><a class="reference internal" href="get_traits/">Get traits</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="get_variants/">get_variants</a>
+                <li class="toctree-l1"><a class="reference internal" href="get_variants/">Get variants</a>
                 </li>
               </ul>
               <ul>
@@ -93,7 +99,7 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="utility/">utility</a>
+                <li class="toctree-l1"><a class="reference internal" href="utility/">Utility</a>
                 </li>
               </ul>
       </div>
@@ -121,21 +127,14 @@
               
                 <h1 id="pandasgwas-documentation">pandasGWAS Documentation</h1>
 <p>pandasGWAS: a Python package for easy retrieval of GWAS Catalog data</p>
-<h2 id="modules">Modules</h2>
-<ul>
-<li>Association - Python class to represent a set of GWAS Catalog Associations</li>
-<li>Browser - A set of helper functions for accessing web links  </li>
-<li>get_associations - Get GWAS Catalog Associations functions</li>
-<li>get_variants - Get GWAS Catalog Single Nucleotide Polymorphisms functions</li>
-<li>get_studies - Get GWAS Catalog Studies functions</li>
-<li>get_traits - Get GWAS Catalog EFO Traits functions</li>
-<li>set_operation - Set operations for objects of same class</li>
-<li>Variant -  Python class to represent a set of Single Nucleotide Polymorphisms</li>
-<li>Study - Python class to represent a set of Studies</li>
-<li>Trait - Python class to represent a set of EFO Traits</li>
-<li>utility - A set of utility functions</li>
-<li><a class="autorefs autorefs-internal" href="summary_statistics/#pandasgwas.summary_statistics">summary_statistics</a> - A set of functions for easy retrieval of summary statistics data based on FTP data</li>
-</ul>
+<h2 id="functions-to-get-gwas-catlog-data">Functions to get GWAS Catlog data</h2>
+<p><a class="autorefs autorefs-internal" href="get_associations/#pandasgwas.get_associations.get_associations">get_associations</a>, <a class="autorefs autorefs-internal" href="get_variants/#pandasgwas.get_variants.get_variants">get_variants</a>, <a class="autorefs autorefs-internal" href="get_studies/#pandasgwas.get_studies.get_studies">get_studies</a>, <a class="autorefs autorefs-internal" href="get_traits/#pandasgwas.get_traits.get_traits">get_traits</a></p>
+<h2 id="functions-for-set-operation">Functions for set operation</h2>
+<p><a class="autorefs autorefs-internal" href="set_operation/#pandasgwas.set_operation.bind">bind</a>, <a class="autorefs autorefs-internal" href="set_operation/#pandasgwas.set_operation.intersect">intersect</a>, <a class="autorefs autorefs-internal" href="set_operation/#pandasgwas.set_operation.set_diff">set_diff</a>, <a class="autorefs autorefs-internal" href="set_operation/#pandasgwas.set_operation.set_xor">set_xor</a>, <a class="autorefs autorefs-internal" href="set_operation/#pandasgwas.set_operation.set_equal">union, set_equal</a></p>
+<h2 id="other-functions">Other functions</h2>
+<p><a class="autorefs autorefs-internal" href="utility/#pandasgwas.utility.get_child_efo">get_child_efo</a>, <a class="autorefs autorefs-internal" href="utility/#pandasgwas.utility.is_API_available">is_API_available</a>, <a class="autorefs autorefs-internal" href="utility/#pandasgwas.utility.clear_cache">clear_cache</a></p>
+<h2 id="submodules">Submodules</h2>
+<p><a class="autorefs autorefs-internal" href="summary_statistics/#pandasgwas.summary_statistics">summary_statistics</a>: A set of unctions for easy retrieval of summary statistics data based on FTP data.</p>
               
             </div>
           </div><footer>
@@ -184,5 +183,5 @@
 
 <!--
 MkDocs version : 1.5.3
-Build Date UTC : 2024-02-22 11:06:50.110137+00:00
+Build Date UTC : 2024-03-08 04:00:25.966104+00:00
 -->

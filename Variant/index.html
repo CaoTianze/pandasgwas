@@ -63,37 +63,25 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">Variant</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#class-variantvariant">class Variant.Variant()</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#property-single_nucleotide_polymorphisms">property single_nucleotide_polymorphisms</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#property-locations">property locations</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#property-genomic_contexts">property genomic_contexts</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#property-ensembl_gene_ids">property ensembl_gene_ids</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#property-entrez_gene_ids">property entrez_gene_ids</a>
-    </li>
-        </ul>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.Variant.Variant">Variant</a>
     </li>
     </ul>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../get_associations/">get_associations</a>
+                <li class="toctree-l1"><a class="reference internal" href="../get_associations/">Get associations</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../get_studies/">get_studies</a>
+                <li class="toctree-l1"><a class="reference internal" href="../get_studies/">Get studies</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../get_traits/">get_traits</a>
+                <li class="toctree-l1"><a class="reference internal" href="../get_traits/">Get traits</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../get_variants/">get_variants</a>
+                <li class="toctree-l1"><a class="reference internal" href="../get_variants/">Get variants</a>
                 </li>
               </ul>
               <ul>
@@ -105,7 +93,7 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../utility/">utility</a>
+                <li class="toctree-l1"><a class="reference internal" href="../utility/">Utility</a>
                 </li>
               </ul>
       </div>
@@ -131,35 +119,138 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="variant">Variant</h1>
-<h2 id="class-variantvariant"><em>class</em> Variant.Variant()</h2>
-<p>Python class to represent a set of GWAS Catalog Single Nucleotide Polymorphism. For more information, see "<a href="https://www.ebi.ac.uk/gwas/rest/docs/api">GWAS CATALOG API Guide</a>"</p>
+                <div class="doc doc-object doc-module">
+
+
+
+<h2 id="pandasgwas.Variant" class="doc doc-heading">
+          <span class="doc doc-object-name doc-module-name">pandasgwas.Variant</span>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="pandasgwas.Variant.Variant" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">Variant</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Python class to represent a set of GWAS Catalog Single Nucleotide Polymorphism. For more information, see "<a href="https://www.ebi.ac.uk/gwas/rest/docs/api">GWAS CATALOG API Guide</a>"</p>
 <pre><code class="language-Python"># get Single Nucleotide Polymorphism by study_id
 from pandasgwas.get_variants import get_variants
 
 snps = get_variants(study_id='GCST000854')
 </code></pre>
-<h3 id="property-single_nucleotide_polymorphisms"><em>property</em> single_nucleotide_polymorphisms</h3>
-<p>type: pandas.DataFrame<br />
-A DataFrame to represent all queried Single Nucleotide Polymorphisms from GWAS Catalog REST API</p>
-<h3 id="property-locations"><em>property</em> locations</h3>
-<p>type: pandas.DataFrame<br />
-A DataFrame to represent column locations from single_nucleotide_polymorphisms</p>
-<h3 id="property-genomic_contexts"><em>property</em> genomic_contexts</h3>
-<p>type: pandas.DataFrame<br />
-A DataFrame to represent column genomicContexts from single_nucleotide_polymorphisms</p>
-<h3 id="property-ensembl_gene_ids"><em>property</em> ensembl_gene_ids</h3>
-<p>type: pandas.DataFrame<br />
-A DataFrame to represent column gene.ensemblGeneIds from genomic_contexts</p>
-<h3 id="property-entrez_gene_ids"><em>property</em> entrez_gene_ids</h3>
-<p>type: pandas.DataFrame<br />
-A DataFrame to represent column gene.entrezGeneIds from genomic_contexts</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Attributes:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>single_nucleotide_polymorphisms</code></b>
+              –
+              <div class="doc-md-description">
+                <p>pandas.DataFrame. A DataFrame to represent all queried Single Nucleotide Polymorphisms from GWAS Catalog REST API</p>
+              </div>
+            </li>
+            <li>
+              <b><code>locations</code></b>
+              –
+              <div class="doc-md-description">
+                <p>pandas.DataFrame. A DataFrame to represent column locations from single_nucleotide_polymorphisms</p>
+              </div>
+            </li>
+            <li>
+              <b><code>genomic_contexts</code></b>
+              –
+              <div class="doc-md-description">
+                <p>pandas.DataFrame. A DataFrame to represent column genomicContexts from single_nucleotide_polymorphisms</p>
+              </div>
+            </li>
+            <li>
+              <b><code>ensembl_gene_ids</code></b>
+              –
+              <div class="doc-md-description">
+                <p>pandas.DataFrame. A DataFrame to represent column gene.ensemblGeneIds from genomic_contexts</p>
+              </div>
+            </li>
+            <li>
+              <b><code>entrez_gene_ids</code></b>
+              –
+              <div class="doc-md-description">
+                <p>pandas.DataFrame. A DataFrame to represent column gene.entrezGeneIds from genomic_contexts</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../Trait/" class="btn btn-neutral float-left" title="Trait"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../get_associations/" class="btn btn-neutral float-right" title="get_associations">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../get_associations/" class="btn btn-neutral float-right" title="Get associations">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>

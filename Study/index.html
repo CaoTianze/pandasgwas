@@ -55,23 +55,7 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">Study</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#class-studystudy">class Study.Study()</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#property-studies">property studies</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#property-platforms">property platforms</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#property-ancestries">property ancestries</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#property-genotypingtechnologies">property genotypingTechnologies</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#property-ancestralgroups">property ancestralGroups</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#property-countriesoforigin">property countriesOfOrigin</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#property-countriesofrecruitment">property countriesOfRecruitment</a>
-    </li>
-        </ul>
+    <li class="toctree-l2"><a class="reference internal" href="#pandasgwas.Study.Study">Study</a>
     </li>
     </ul>
                 </li>
@@ -85,19 +69,19 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../get_associations/">get_associations</a>
+                <li class="toctree-l1"><a class="reference internal" href="../get_associations/">Get associations</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../get_studies/">get_studies</a>
+                <li class="toctree-l1"><a class="reference internal" href="../get_studies/">Get studies</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../get_traits/">get_traits</a>
+                <li class="toctree-l1"><a class="reference internal" href="../get_traits/">Get traits</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../get_variants/">get_variants</a>
+                <li class="toctree-l1"><a class="reference internal" href="../get_variants/">Get variants</a>
                 </li>
               </ul>
               <ul>
@@ -109,7 +93,7 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../utility/">utility</a>
+                <li class="toctree-l1"><a class="reference internal" href="../utility/">Utility</a>
                 </li>
               </ul>
       </div>
@@ -135,36 +119,145 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="study">Study</h1>
-<h2 id="class-studystudy"><em>class</em> Study.Study()</h2>
-<p>Python class to represent a set of GWAS Catalog Study. For more information, see "<a href="https://www.ebi.ac.uk/gwas/rest/docs/api">GWAS CATALOG API Guide</a>"</p>
+                <div class="doc doc-object doc-module">
+
+
+
+<h2 id="pandasgwas.Study" class="doc doc-heading">
+          <span class="doc doc-object-name doc-module-name">pandasgwas.Study</span>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="pandasgwas.Study.Study" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">Study</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Python class to represent a set of GWAS Catalog Study. For more information, see "<a href="https://www.ebi.ac.uk/gwas/rest/docs/api">GWAS CATALOG API Guide</a>"</p>
 <pre><code class="language-Python"># get Study by study_id
 from pandasgwas.get_studies import get_studies
-
 studies = get_studies(study_id='GCST000854')
-
 </code></pre>
-<h3 id="property-studies"><em>property</em> studies</h3>
-<p>type: pandas.DataFrame<br />
-A DataFrame to represent all queried Studies from GWAS Catalog REST API</p>
-<h3 id="property-platforms"><em>property</em> platforms</h3>
-<p>type: pandas.DataFrame<br />
-A DataFrame to represent column platforms from studies</p>
-<h3 id="property-ancestries"><em>property</em> ancestries</h3>
-<p>type: pandas.DataFrame<br />
-A DataFrame to represent column ancestries from studies</p>
-<h3 id="property-genotypingtechnologies"><em>property</em> genotypingTechnologies</h3>
-<p>type: pandas.DataFrame<br />
-A DataFrame to represent column genotypingTechnologies from studies</p>
-<h3 id="property-ancestralgroups"><em>property</em> ancestralGroups</h3>
-<p>type: pandas.DataFrame<br />
-A DataFrame to represent column ancestralGroups from ancestries</p>
-<h3 id="property-countriesoforigin"><em>property</em> countriesOfOrigin</h3>
-<p>type: pandas.DataFrame<br />
-A DataFrame to represent column countriesOfOrigin from ancestries</p>
-<h3 id="property-countriesofrecruitment"><em>property</em> countriesOfRecruitment</h3>
-<p>type: pandas.DataFrame<br />
-A DataFrame to represent column countriesOfOrigin from ancestries</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Attributes:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>studies</code></b>
+              –
+              <div class="doc-md-description">
+                <p>pandas.DataFrame. A DataFrame to represent all queried Studies from GWAS Catalog REST API</p>
+              </div>
+            </li>
+            <li>
+              <b><code>platforms</code></b>
+              –
+              <div class="doc-md-description">
+                <p>pandas.DataFrame. A DataFrame to represent column platforms from studies</p>
+              </div>
+            </li>
+            <li>
+              <b><code>ancestries</code></b>
+              –
+              <div class="doc-md-description">
+                <p>pandas.DataFrame. A DataFrame to represent column ancestries from studies</p>
+              </div>
+            </li>
+            <li>
+              <b><code>genotypingTechnologies</code></b>
+              –
+              <div class="doc-md-description">
+                <p>pandas.DataFrame. A DataFrame to represent column genotypingTechnologies from studies</p>
+              </div>
+            </li>
+            <li>
+              <b><code>ancestralGroups</code></b>
+              –
+              <div class="doc-md-description">
+                <p>pandas.DataFrame. A DataFrame to represent column ancestralGroups from ancestries</p>
+              </div>
+            </li>
+            <li>
+              <b><code>countriesOfOrigin</code></b>
+              –
+              <div class="doc-md-description">
+                <p>pandas.DataFrame. A DataFrame to represent column countriesOfOrigin from ancestries</p>
+              </div>
+            </li>
+            <li>
+              <b><code>countriesOfRecruitment</code></b>
+              –
+              <div class="doc-md-description">
+                <p>pandas.DataFrame. A DataFrame to represent column countriesOfOrigin from ancestries</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
               
             </div>
           </div><footer>
