@@ -111,11 +111,12 @@ def download(search_DF: DataFrame) -> None:
     Returns:
 
     """
+    
+    os.makedirs(home_path, exist_ok=True)
     list(map(lambda x, y: _download_FTP(x, y), search_DF['dir'], search_DF['file_name']))
 
 
 def _download_FTP(ftp_dir: str, file_name: str):
-    # os.makedirs(home_path, exist_ok=True)
     # import urllib3
     # s.keep_alive = False
     # s.verify = False
