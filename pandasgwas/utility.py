@@ -4,8 +4,7 @@ from pandasgwas import client
 from requests.adapters import HTTPAdapter
 import requests
 
-s = requests.Session()
-s.mount('https://', HTTPAdapter(max_retries=5))
+
 
 
 def get_child_efo(efo_id: str, interactive: bool = True) -> List[str]:
@@ -48,10 +47,12 @@ def is_API_available() -> bool:
         True or False
     """
     try:
-        r = s.get("https://www.ebi.ac.uk/gwas/rest/api/efoTraits")
-        if r.status_code == 200:
-            return True
-        return False
+        with requests.Session() as s:
+            s.mount('https://', HTTPAdapter(max_retries=5))
+            r = s.get("https://www.ebi.ac.uk/gwas/rest/api/efoTraits")
+            if r.status_code == 200:
+                return True
+            return False
     except:
         return False
 
@@ -64,4 +65,4 @@ def clear_cache() -> None:
         None
 
     """
-    client.cache_get.cache_clear()
+    client.cache.clear()

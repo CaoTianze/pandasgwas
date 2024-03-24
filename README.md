@@ -61,7 +61,8 @@ df = parse(search_DF)
 python: 3.11  
 pandas: 1.5.3  
 requests: 2.31.0  
-progressbar2: 4.2.0
+progressbar2: 4.2.0   
+cachetools: 5.3.0   
 ## Documentation
 See [pandasGWAS Documentation](https://caotianze.github.io/pandasgwas/)
 ## Licensing information
