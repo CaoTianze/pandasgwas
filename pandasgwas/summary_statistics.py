@@ -24,8 +24,6 @@ from requests.adapters import HTTPAdapter
 
 from pandasgwas.client import ask_yes_no_question
 
-s = requests.Session()
-s.mount('https://', HTTPAdapter(max_retries=5))
 
 
 def _applyDF(line):
@@ -66,7 +64,9 @@ def search(PubMed_id: str = None, study_accession_id: str = None, EFO_trait_id: 
     if PubMed_id is None and study_accession_id is None and EFO_trait_id is None:
         warnings.warn('Since there are no input conditions, all index values will be returned.')
     if online_index:
-        _download_FTP('/pub/databases/gwas/summary_statistics/', 'harmonised_list.txt')
+        with requests.Session() as s:
+            s.mount('https://', HTTPAdapter(max_retries=5))
+            _download_FTP('/pub/databases/gwas/summary_statistics/', 'harmonised_list.txt', s)
         filter_df = read_csv(home_path + os.sep + 'harmonised_list.txt', names=['raw'])
         filter_df[['dir', 'file_name', 'PubMed_id', 'study_accession_id', 'EFO_trait_id']] = filter_df['raw'].apply(
             _applyDF)
@@ -113,10 +113,12 @@ def download(search_DF: DataFrame) -> None:
     """
     
     os.makedirs(home_path, exist_ok=True)
-    list(map(lambda x, y: _download_FTP(x, y), search_DF['dir'], search_DF['file_name']))
+    with requests.Session() as s:
+        s.mount('https://', HTTPAdapter(max_retries=5))
+        list(map(lambda x, y: _download_FTP(x, y, s), search_DF['dir'], search_DF['file_name']))
 
 
-def _download_FTP(ftp_dir: str, file_name: str):
+def _download_FTP(ftp_dir: str, file_name: str, s):
     # import urllib3
     # s.keep_alive = False
     # s.verify = False
