@@ -44,6 +44,7 @@ host = 'ftp.ebi.ac.uk'
 harmonised_df = read_csv(project_dir + os.sep + 'harmonised_list.txt', names=['raw'])
 harmonised_df[['dir', 'file_name', 'PubMed_id', 'study_accession_id', 'EFO_trait_id']] = harmonised_df['raw'].apply(
     _applyDF)
+os.makedirs(home_path, exist_ok=True)
 
 
 def search(PubMed_id: str = None, study_accession_id: str = None, EFO_trait_id: str = None,
