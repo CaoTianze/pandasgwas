@@ -1,0 +1,15 @@
+# .github/config.yml
+welcome:
+  issueComment: |
+    ⚠️ This repository is no longer maintained.
+    All development, bug fixes and feature requests have moved to our successor repo:
+    https://github.com/TianzeLab/pandasGWAS2
+
+    We will not respond to issues here. Please open your discussion in the new repository.
+
+  prComment: |
+    ⚠️ This repository is no longer maintained.
+    Pull requests in this repo will not be reviewed or merged.
+
+    Please submit your changes to the successor project:
+    https://github.com/TianzeLab/pandasGWAS2
