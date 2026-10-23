@@ -1,3 +1,7 @@
+> ⚠️ This repository is unmaintained.
+> Active successor: https://github.com/TianzeLab/pandasGWAS2
+> No further issues or PRs will be processed here.
+
 # pandasGWAS: a Python package for easy retrieval of GWAS Catalog data
 ## Cite this work
 Cao, T., Li, A. & Huang, Y. pandasGWAS: a Python package for easy retrieval of GWAS catalog data. BMC Genomics 24, 238 (2023). https://doi.org/10.1186/s12864-023-09340-2
